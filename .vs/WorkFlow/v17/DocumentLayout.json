@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Fuentes\\GIT\\NuevoCapital\\WorkFlowNuevoCapital\\WorkFlow\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F1B2F1DD-FEB1-4BF0-AC2C-8861185A09AA}|WorkFlow\\WorkFlow.csproj|c:\\fuentes\\git\\nuevocapital\\workflownuevocapital\\workflow\\workflow\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{F1B2F1DD-FEB1-4BF0-AC2C-8861185A09AA}|WorkFlow\\WorkFlow.csproj|solutionrelative:workflow\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1B2F1DD-FEB1-4BF0-AC2C-8861185A09AA}|WorkFlow\\WorkFlow.csproj|c:\\fuentes\\git\\nuevocapital\\workflownuevocapital\\workflow\\workflow\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{F1B2F1DD-FEB1-4BF0-AC2C-8861185A09AA}|WorkFlow\\WorkFlow.csproj|solutionrelative:workflow\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Login.aspx",
+              "DocumentMoniker": "C:\\Fuentes\\GIT\\NuevoCapital\\WorkFlowNuevoCapital\\WorkFlow\\WorkFlow\\Login.aspx",
+              "RelativeDocumentMoniker": "WorkFlow\\Login.aspx",
+              "ToolTip": "C:\\Fuentes\\GIT\\NuevoCapital\\WorkFlowNuevoCapital\\WorkFlow\\WorkFlow\\Login.aspx",
+              "RelativeToolTip": "WorkFlow\\Login.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-02-14T01:25:37.531Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\Fuentes\\GIT\\NuevoCapital\\WorkFlowNuevoCapital\\WorkFlow\\WorkFlow\\Web.config",
+              "RelativeDocumentMoniker": "WorkFlow\\Web.config",
+              "ToolTip": "C:\\Fuentes\\GIT\\NuevoCapital\\WorkFlowNuevoCapital\\WorkFlow\\WorkFlow\\Web.config",
+              "RelativeToolTip": "WorkFlow\\Web.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-02-14T01:24:19.208Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

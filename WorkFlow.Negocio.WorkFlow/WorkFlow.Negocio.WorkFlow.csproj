@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1C9D805C-9D6E-44E2-A033-EDA0A3CD82DD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WorkFlow.Negocio.WorkFlow</RootNamespace>
+    <AssemblyName>WorkFlow.Negocio.WorkFlow</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="NegAcciones.cs" />
+    <Compile Include="NegCartaResguardo.cs" />
+    <Compile Include="NegConfiguracionHipotecaria.cs" />
+    <Compile Include="NegConservador.cs" />
+    <Compile Include="NegDesembolso.cs" />
+    <Compile Include="NegDestinoFondo.cs" />
+    <Compile Include="NegDocumentosEstudioTitulo.cs" />
+    <Compile Include="NegEtapas.cs" />
+    <Compile Include="NegInstitucionesFinancieras.cs" />
+    <Compile Include="NegNotarias.cs" />
+    <Compile Include="NegRegistroAntecedentesSalud.cs" />
+    <Compile Include="NegRentasCliente.cs" />
+    <Compile Include="NegActivosCliente.cs" />
+    <Compile Include="NegBandejaEntrada.cs" />
+    <Compile Include="NegClientes.cs" />
+    <Compile Include="NegComunas.cs" />
+    <Compile Include="NegDestino.cs" />
+    <Compile Include="NegDocumentacion.cs" />
+    <Compile Include="NegEventos.cs" />
+    <Compile Include="NegFabricas.cs" />
+    <Compile Include="NegGastosOperacionales.cs" />
+    <Compile Include="NegInmobiliarias.cs" />
+    <Compile Include="NegInversionistas.cs" />
+    <Compile Include="NegObjetivos.cs" />
+    <Compile Include="NegObservaciones.cs" />
+    <Compile Include="NegParidad.cs" />
+    <Compile Include="NegPasivosCliente.cs" />
+    <Compile Include="NegPlazosSimulador.cs" />
+    <Compile Include="NegProductos.cs" />
+    <Compile Include="NegProvincia.cs" />
+    <Compile Include="NegProyectos.cs" />
+    <Compile Include="NegRegion.cs" />
+    <Compile Include="NegSeguros.cs" />
+    <Compile Include="NegSimulacionHipotecaria.cs" />
+    <Compile Include="NegSolicitudes.cs" />
+    <Compile Include="NegSubsidio.cs" />
+    <Compile Include="NegSucursales.cs" />
+    <Compile Include="NegFlujo.cs" />
+    <Compile Include="NegTarifado.cs" />
+    <Compile Include="NegTextoReportes.cs" />
+    <Compile Include="NegTipoFinanciamiento.cs" />
+    <Compile Include="NegPropiedades.cs" />
+    <Compile Include="NegParticipante.cs" />
+    <Compile Include="NegTipoRenta.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WorkFlow.AccesoDatos\WorkFlow.AccesoDatos.csproj">
+      <Project>{4c526a26-aa1c-449d-a1ad-1f9aa5b76626}</Project>
+      <Name>WorkFlow.AccesoDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WorkFlow.Entidades\WorkFlow.Entidades.csproj">
+      <Project>{bdbc8498-b1f5-468a-9aa3-2437ec517311}</Project>
+      <Name>WorkFlow.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WorkFlow.General\WorkFlow.General.csproj">
+      <Project>{b9d1fdd9-63b1-40c7-8fdd-9828206c279b}</Project>
+      <Name>WorkFlow.General</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WorkFlow.Negocio.Administracion\WorkFlow.Negocio.Administracion.csproj">
+      <Project>{d7b63276-523a-46f1-a2d1-070ad50260d3}</Project>
+      <Name>WorkFlow.Negocio.Administracion</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

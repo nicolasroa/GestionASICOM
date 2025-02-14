@@ -1,0 +1,120 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Eventos.Master" AutoEventWireup="true" CodeBehind="LiquidacionMutuo.aspx.cs" Inherits="WorkFlow.Eventos.Desembolso.LiquidacionMutuo" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <%@ Register Src="~/DatosGenerales/DatosSolicitud.ascx" TagPrefix="uc1" TagName="DatosSolicitud" %>
+    <%@ Register Src="~/DatosGenerales/DatosPropiedad.ascx" TagPrefix="uc1" TagName="DatosPropiedad" %>
+    <%@ Register Src="~/DatosGenerales/DatosParticipante.ascx" TagPrefix="uc1" TagName="DatosParticipante" %>
+    <%@ Register Src="~/DatosGenerales/DatosResumen.ascx" TagPrefix="uc1" TagName="DatosResumen" %>
+    <%@ Register Src="~/DatosGenerales/DatosObservaciones.ascx" TagPrefix="uc1" TagName="DatosObservaciones" %>
+    <%@ Register Src="~/DatosGenerales/DatosFlujoSolicitud.ascx" TagPrefix="uc1" TagName="DatosFlujoSolicitud" %>
+
+    <script>
+        function InicioCoordinacion() {
+            try {
+                $("#<%= txtFechaLiquidacion.ClientID %>").datepicker({
+                    dateFormat: "dd/mm/yy",
+                    changeMonth: true,
+                    changeYear: true,
+                    maxDate: 0,
+                    constrainInput: true //La entrada debe cumplir con el formato
+                });
+            } catch (e) {
+                alert(e.message);
+            }
+        }
+    </script>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="row navbar-fixed-top" style="background-color: #ffffff">
+
+        <div class="col-lg-8 col-md-8 col-sm-12">
+
+            <ul class="nav small nav-tabs">
+                <li class=""><a href="#Resumen" data-toggle="tab" aria-expanded="false">Resumen</a></li>
+                <li class=""><a id="TabFlujo" href="#Flujo" runat="server" data-toggle="tab" aria-expanded="false">Resumen Flujo</a></li>
+                <li class=""><a href="#Credito" data-toggle="tab" aria-expanded="false">Crédito</a></li>
+                <li class=""><a href="#Participantes" data-toggle="tab" aria-expanded="false">Participantes</a></li>
+                <li class=""><a href="#Propiedades" data-toggle="tab" aria-expanded="false">Propiedades en Garantía</a></li>
+                <li class="active"><a href="#Liquidacion" data-toggle="tab" aria-expanded="true">Liquidación</a></li>
+            </ul>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class='form-group'>
+                <div class="col-lg-7">
+                    <anthem:DropDownList ID="ddlAccionEvento" runat="server" CssClass="form-control" AutoCallBack="true" AutoUpdateAfterCallBack="true" OnSelectedIndexChanged="ddlAccionEvento_SelectedIndexChanged"></anthem:DropDownList>
+                </div>
+                <div class="col-lg-5">
+                    <anthem:LinkButton ID="btnAccion" Visible="false" runat="server" OnMouseDown="javascript:MensajeConfirmacion('¿Seguro que desea Procesar esta Acción para el Evento?',this);" AutoUpdateAfterCallBack="true" OnClick="btnAccion_Click" EnabledDuringCallBack="false" TextDuringCallBack="Procesando" PreCallBackFunction="this.disabled = true" PostCallBackFunction="this.disabled = false"></anthem:LinkButton>
+                </div>
+            </div>
+        </div>
+        </div>
+    <div class="row spacenav">
+        <div class="col-lg-12 text-right">
+            <anthem:LinkButton ID="btnDocumental" runat="server" AutoUpdateAfterCallBack="true" OnClick="btnDocumental_Click" CssClass="btn-sm btn-success"><span class="glyphicon glyphicon-folder-open"></span> Carpeta Digital</anthem:LinkButton>
+        </div>
+    </div>
+    <div id="tabEvento" class="tab-content">
+        <div class="tab-pane fade" id="Resumen">
+            <uc1:DatosResumen runat="server" ID="DatosResumen" />
+        </div>
+        <div class="tab-pane fade" id="Flujo">
+            <uc1:DatosFlujoSolicitud runat="server" ID="DatosFlujoSolicitud" />
+        </div>
+        <div class="tab-pane fade" id="Credito">
+            <uc1:DatosSolicitud runat="server" ID="DatosSolicitud" />
+        </div>
+        <div class="tab-pane fade" id="Participantes">
+            <uc1:DatosParticipante runat="server" ID="DatosParticipante" />
+        </div>
+        <div class="tab-pane fade" id="Propiedades">
+            <uc1:DatosPropiedad runat="server" ID="DatosPropiedad" />
+        </div>
+        <div class="tab-pane fade active in" id="Liquidacion">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Liquidación del Mutuo</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-5">
+                                </div>
+                                <div class="col-lg-2 text-center">
+                                    <div class='form-group'>
+                                        <label for="txtFechaSolicitudTasacion">Fecha de Liquidación</label>
+                                        <anthem:TextBox ID="txtFechaLiquidacion" runat="server" onblur="esFechaValida(this);" class="form-control" AutoUpdateAfterCallBack="True" AutoCallBack="True" OnTextChanged="txtFechaSolicitudTasacion_TextChanged"></anthem:TextBox>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label for="txtMontoLiquidacion">Monto a Liquidar</label>
+                                        <anthem:TextBox ID="txtMontoLiquidacion" runat="server" class="form-control" AutoUpdateAfterCallBack="True" Enabled="false" onKeyPress="return SoloNumeros(event,this.value,4,this);"></anthem:TextBox>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label for="txtMontoLiquidacionPesos">Monto a Liquidar ($)</label>
+                                        <anthem:TextBox ID="txtMontoLiquidacionPesos" runat="server" class="form-control" AutoUpdateAfterCallBack="True" Enabled="false" onKeyPress="return SoloNumeros(event,this.value,4,this);"></anthem:TextBox>
+                                        <anthem:Label ID="lblMontoLiquidacionPesos" AutoUpdateAfterCallBack="true" Visible="false" runat="server"></anthem:Label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4">
+                                </div>
+                                <div class="col-lg-4 text-center">
+                                    <anthem:LinkButton ID="btnProcesarLiquidacion" class="btn-success btn-sm" AutoUpdateAfterCallBack="true" runat="server" OnClick="btnProcesarLiquidacion_Click"><span class="glyphicon glyphicon-new-window"></span> Procesar Liquidación</anthem:LinkButton>
+                                    <anthem:LinkButton ID="btnAnularLiquidacion" class="btn-danger btn-sm" AutoUpdateAfterCallBack="true" runat="server" OnMouseDown="javascript:MensajeConfirmacion('¿Seguro que desea Anular la Liquidación?',this);" OnClick="btnAnularLiquidacion_Click"><span class="glyphicon glyphicon-ban-circle"></span> Anular Liquidación</anthem:LinkButton>
+                                </div>
+                                <div class="col-lg-4">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</asp:Content>

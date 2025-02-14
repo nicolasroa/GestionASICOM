@@ -1,0 +1,526 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PDF.master.cs" Inherits="WorkFlow.Master.PDF" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .Titulo {
+            font-size: 24px;
+            font-family: Helvetica;
+            color: #317eac;
+            height: 45px;
+            text-align: center;
+            vertical-align: central;
+        }
+
+        .tdFormulario01 {
+            padding-left: 1px;
+            font-size: 14px;
+            color: #333333;
+            font-family: Helvetica;
+        }
+
+        .ParrafoLegalSangria {
+            padding: 3px;
+            font-size: 14px;
+            color: #333333;
+            font-family: Arial;
+            text-align: justify;
+            padding-left: 15px;
+        }
+
+        .ParrafoLegal {
+            padding: 3px;
+            font-size: 14px;
+            color: #333333;
+            font-family: Arial;
+            text-align: justify;
+        }
+
+        .tdTitulo01 {
+            padding-left: 10px;
+            font-size: 16px;
+            font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+            border: 1px solid #4297d7;
+            background: #77B4DF;
+            color: #ffffff;
+            font-weight: bold;
+            height: 30px;
+            text-align: center;
+        }
+
+        .tdTitulo02 {
+            text-align: left;
+            color: #ffffff;
+            font-weight: normal;
+            font-size: 14px;
+            font-weight: bold;
+            font-family: Helvetica;
+            height: 20px;
+            background: #004EFF;
+            padding-left: 10px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+            border: 1px solid #5c9ccc;
+        }
+
+        .GridHeader {
+            height: 25px;
+            text-align: center;
+        }
+
+            .GridHeader th {
+                background-color: #5c9ccc;
+                padding: 3px;
+                color: #fff;
+            }
+
+                /*Redondeamos el borde superior izquierdo de la primera casilla del header*/
+
+                .GridHeader th:first-child {
+                    border-radius: 5px 0 0 0;
+                }
+
+                /*Y el borde superior derecho de la ultima casilla*/
+
+                .GridHeader th:last-child {
+                    border-radius: 0 5px 0 0;
+                }
+
+                /*Estilo para los enlaces del header...*/
+
+                .GridHeader th a {
+                    padding: 5px;
+                    text-decoration: none;
+                    color: #435B14;
+                    background-color: #a9c673;
+                    border-radius: 5px;
+                }
+
+                    .GridHeader th a:hover {
+                        color: #435B14;
+                        background-color: #B1C689;
+                        box-shadow: 0 0 .9em rgba(0, 0, 0, .8);
+                    }
+
+        .SubGridHeader {
+            font-weight: bold;
+            background: #5c9ccc url(images/ui-bg_glass_40_ffc73d_1x400.png) 40% 40% repeat-x;
+            color: #fff;
+            text-align: center;
+            z-index: 0;
+            position: static;
+            font-family: helvetica, arial, sans-serif;
+            font-weight: normal;
+            height: 20px;
+        }
+
+        .GridItem {
+            background-color: #FFFFFF;
+            text-align: center;
+        }
+
+            .GridItem:hover {
+                background-color: #e17009;
+                text-align: center;
+                color: #fff;
+            }
+
+        .GridAtlItem {
+            background-color: #E6E6E6;
+            text-align: center;
+        }
+
+            .GridAtlItem:hover {
+                background-color: #e17009;
+                text-align: center;
+                color: #fff;
+            }
+
+        /*.GridPager
+{
+    background-color: #A9D0F5;
+    text-align: center;
+    color: white;
+}
+*/
+
+        .GridPager td {
+            background-color: #5c9ccc;
+        }
+
+        /*Bordes redondeados para la paginacion*/
+
+        .GridPager > td {
+            border-radius: 0px 0px 5px 5px;
+        }
+
+        /*Centramos la tabla que contiene los enlaces para las paginas*/
+        .GridPager table {
+            margin: 0px auto;
+        }
+
+        /*El span representa el enlace a la pagina en la que estamos actualmente*/
+        .GridPager span {
+            display: block;
+            margin: 0;
+            padding: 2px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50% 50%;
+            background: #e17009;
+            color: #fff;
+            text-align: center;
+        }
+
+        /*Estilo para los enlaces redondos*/
+        .GridPager a {
+            display: block;
+            text-decoration: none;
+            margin: 0;
+            padding: 2px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50% 50%;
+            background: #367DEE;
+            color: #fff;
+            text-align: center;
+        }
+
+            .GridPager a:hover {
+                display: block;
+                margin: 0;
+                padding: 2px;
+                width: 15px;
+                height: 15px;
+                border-radius: 50% 50%;
+                background: #B1C689;
+                color: #3743a1;
+                box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+                text-align: center;
+            }
+
+
+
+        .tdInfo {
+            padding-left: 5px;
+            font-size: 11px;
+            color: #848484;
+            font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+            height: 18px;
+            font-weight: bold;
+            text-align: left;
+           
+           
+            
+        }
+
+        .tdInfoData {
+            font-size: 11px;
+            color: #333333;
+            font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            text-align: left;
+           
+           
+           
+        }
+
+
+
+        .Texto16N {
+            font-family: Arial;
+            font-size: 16px;
+            font-weight: bold;
+            color: Black;
+        }
+
+        .Texto14N {
+            font-family: Arial;
+            font-size: 14px;
+            font-weight: bold;
+            color: Black;
+        }
+
+        .Texto14 {
+            font-family: Arial;
+            font-size: 14px;
+            font-weight: normal;
+            color: Black;
+        }
+
+        .Texto12 {
+            font-family: Arial;
+            font-size: 12px;
+            font-weight: normal;
+            color: Black;
+        }
+
+        .Texto12Style {
+            font-family: Arial;
+            font-size: 12px;
+            font-weight: normal;
+            color: Black;
+            border-right-color: Black;
+        }
+
+        .Texto12N {
+            font-family: Arial;
+            font-size: 12px;
+            font-weight: bold;
+            color: Black;
+        }
+
+        .Texto12NStyle {
+            font-family: Arial;
+            font-size: 12px;
+            font-weight: bold;
+            color: Black;
+            border-right-color: Black;
+            background-color: #ACACAC;
+        }
+
+        .Texto10 {
+            font-family: Arial;
+            font-size: 10px;
+            font-weight: normal;
+            color: Black;
+        }
+
+        .EncabezadoGrilla {
+            font-family: Arial;
+            font-size: 12px;
+            font-weight: bold;
+            color: Black; /*border-color: Black;*/
+            border-width: 1px;
+            text-align: center;
+            border-style: solid;
+            background: #E0E0E0;
+            border-right-color: #ACACAC;
+        }
+
+        .FilaGrilla {
+            font-family: Arial;
+            font-size: 12px;
+            font-weight: normal;
+            color: Black; /*border-color: Black;*/
+            border-width: 1px;
+            text-align: center;
+            height: 15px;
+            border-right-color: #ACACAC;
+        }
+
+        .FilaGrillaAlinearDerecha {
+            font-family: Arial;
+            font-size: 12px;
+            font-weight: normal;
+            color: Black;
+            border-color: Black;
+            border-width: 1px;
+            text-align: left;
+            height: 15px;
+        }
+
+        .Tabla {
+            font-family: Arial;
+            font-size: 12px;
+            font-weight: normal;
+            border-width: 1px;
+            border-color: black;
+            text-align: center;
+            height: 18px;
+            width: 800px;
+            border: 1px solid black;
+        }
+
+        .CeldaTitLeft {
+            font-family: Arial;
+            font-size: 12px;
+            font-weight: bold;
+            border: 1px solid black;
+            border-width: 1px;
+            border-color: black;
+            height: 18px;
+            text-align: left;
+            width: 100px;
+            background-color: #BFBFBF;
+            border-collapse: collapse;
+        }
+
+        .CeldaTitLeftDato {
+            font-family: Arial;
+            font-size: 12px;
+            font-weight: normal;
+            border: 1px solid black;
+            border-width: 1px;
+            border-color: black;
+            height: 18px;
+            text-align: left;
+            width: 300px;
+            border-collapse: collapse;
+        }
+
+        .PieGrilla {
+            font-family: Arial;
+            font-size: 12px;
+            font-weight: bold;
+            color: Black;
+            border-color: Black;
+            border-width: 1px;
+            text-align: center;
+            border-style: solid;
+        }
+
+        .PieGrillaAlinearDerecha {
+            font-family: Arial;
+            font-size: 14px;
+            font-weight: bold;
+            color: Black;
+            border-color: Black;
+            border-width: 1px;
+            text-align: left;
+            border-style: solid;
+        }
+
+        .Texto18 {
+            font-family: Calibri;
+            font-size: 16px;
+            font-weight: normal;
+            color: Black;
+            text-align: justify;
+        }
+
+        body {
+            width: 950px;
+            font-family: Arial;
+            font-size: 11px;
+        }
+
+        .Contenedor {
+            width: 950px;
+            font-size: 12px;
+            padding: 2px 2px 2px 2px;
+        }
+
+        .ContenedorDatos {
+            width: 910px;
+            padding: 0px 0px 0px 20px;
+            font-size: 12px;
+        }
+
+        .LogoEncabezado {
+            font-size: 12px;
+            font-weight: bold;
+            float: left;
+        }
+
+        .TituloSolicitud {
+            font-size: 14px;
+            float: left;
+            margin-left: 350px;
+            width:350px;
+        }
+
+        .CeldaTitulo {
+            font-size: 14px;
+            text-align: center;
+            border: 1px solid black;
+        }
+
+        .TituloEscritura {
+            padding: 10px 5px 5px 5px;
+            font-size: 16px;
+            text-align: center;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .SubTitulo {
+            background: #5c9ccc;
+            color: #FFFFFF;
+            font-size: 14px;
+            text-align: left;
+            font-weight: bold;
+            padding: 5px 0px 5px 2px;
+        }
+
+        .SubTituloDatos {
+            font-size: 14px;
+            text-align: left;
+            font-weight: bold;
+            padding: 10px 0px 0px 10px;
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+        }
+
+        .ContenedorTabla{
+           width: 100%;
+           font-size: 14px;
+        }
+
+        .TextoSubrayado {
+            text-decoration-line:underline;
+        }
+
+        .TablaTitulo {
+            text-align:center;
+            background: #5c9ccc; 
+            color: #FFFFFF;
+            font-weight:bold;
+        }
+        
+        .ContenedorPDF {
+            width:100%; 
+            padding-left:150px; 
+            padding-right:150px
+        }
+
+        .ContenedorPDFDatos {
+            width:880px;
+            text-align:justify;
+            font-size:22px;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        .ContenedorPDFTitulo {
+            width:850px;
+            font-size:24px;
+            text-align:center;
+            font-weight:bold;
+            text-decoration: underline;
+        }
+
+        .ContenedorPDFCelda {
+            border: 1px solid black;
+            padding-left:3px
+        }
+        .ContenedorPDFCeldaSinBorde {
+           
+            padding-left:3px
+        }
+         .tdColumnaEnumeracion {
+            vertical-align: top;
+            padding-left: 3px;
+            width: 4%;
+        }
+        
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="ContenedorPDFDatos" style="text-align: left;">
+            <img id="imgLogoHeader" runat="server" alt="Nuevo Capital" width="128" />
+        </div>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

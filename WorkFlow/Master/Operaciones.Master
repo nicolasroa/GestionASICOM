@@ -1,0 +1,139 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Operaciones.master.cs" Inherits="WorkFlow.Master.Operaciones" %>
+
+<%@ Register Assembly="Anthem" Namespace="Anthem" TagPrefix="anthem" %>
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="../Content/Estilo/jquery-ui.css" rel="stylesheet" />
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+    <link href="../Content/Site.css" rel="stylesheet" />
+    <link href="../Content/responsive.dataTables.min.css" rel="stylesheet" />
+    <link href="../Content/tipped.css" rel="stylesheet" />
+    <link href="../Content/customized-clients.css" rel="stylesheet" />
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Path="~/Scripts/jquery-3.3.1.js" />
+
+                <asp:ScriptReference Path="~/Scripts/bootstrap.js" />
+                <asp:ScriptReference Path="~/Scripts/jquery-ui.js" />
+                <asp:ScriptReference Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Path="~/Scripts/jquery.dataTables.min.js" />
+                <asp:ScriptReference Path="~/Scripts/dataTables.bootstrap.min.js" />
+                <asp:ScriptReference Path="~/Scripts/dataTables.responsive.min.js" />
+                <asp:ScriptReference Path="~/Scripts/responsive.bootstrap.min.js" />
+                <asp:ScriptReference Path="~/Scripts/jquery.dataTables.min.js" />
+                <asp:ScriptReference Path="~/Scripts/Controles.js" />
+                <asp:ScriptReference Path="~/Scripts/Efectos.js" />
+                <asp:ScriptReference Path="~/Scripts/Validacion.js" />
+
+
+
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+
+         <div class="modal fade" id="MensajesModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div id="TipoMensaje">
+                    <h4 id="Titulo"></h4>
+                    <p id="Texto">
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div style="display: none">
+            <div id="divModalPopup1" title="VentanaModal">
+            </div>
+            <div id="divModalPopup2" title="VentanaModal">
+            </div>
+            <div id="divModalPopup3" title="VentanaModal">
+            </div>
+            <div id="divMensajes">
+                <div>
+                    <label id="lbltextoMensaje">
+                    </label>
+                </div>
+            </div>
+            <div id="divConfirmacion">
+                <label id="lbltextoConfirmacion">
+                </label>
+            </div>
+            <anthem:Button PreCallBackFunction="this.disabled = true" PostCallBackFunction="this.disabled = false"
+                EnabledDuringCallBack="False" ID="btnCerrarPopup" runat="server" Text="btnCerrar"
+                CssClass="CssCerrarPopup" />
+            <anthem:HiddenField ID="hdnIsPostBack" runat="server" AutoUpdateAfterCallBack="true" />
+            <button type="button" id="btnAbrirModal" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+             <button type="button" id="btnAbrirModalEvento" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalEvento">Open Modal</button>
+
+        </div>
+
+        <div id="myModal" class="modal fade" role="dialog" data-keyboard="false" data-backdrop="static" tabindex="-1">
+            <div class="modal-dialogMensaje modal-dialog-centered">
+
+                <!-- Modal content-->
+                <div class="modal-content modal-content-client" id="divCuerpoModal">
+                    <div class="modal-header" id="divTituloModal">
+                    </div>
+                    <div class="modal-body" id="divContenidoModal">
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+         <div id="myModalEvento" class="modal fade" role="dialog" data-keyboard="false" data-backdrop="static" tabindex="-1">
+            <div class="modal-dialogEvento modal-dialog-centered">
+
+                <!-- Modal content-->
+                <div class="modal-content modal-content-client" id="divCuerpoEvento">
+                     <div class="modal-header fondoTituloEvento" id="divTituloEvento">
+                    </div>
+                    <div class="modal-bodyEvento" id="divContenidoEvento">
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+      
+
+
+
+
+
+
+
+    </form>
+</body>
+</html>

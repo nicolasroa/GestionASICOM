@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BDBC8498-B1F5-468A-9AA3-2437EC517311}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WorkFlow.Entidades</RootNamespace>
+    <AssemblyName>WorkFlow.Entidades</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Administracion\Roles.cs" />
+    <Compile Include="Documental\ArchivosRepositorios.cs" />
+    <Compile Include="Documental\Bitacora.cs" />
+    <Compile Include="Documental\DatosWorkflow.cs" />
+    <Compile Include="Documental\GrupoDocumento.cs" />
+    <Compile Include="Documental\TiposDocumentos.cs" />
+    <Compile Include="GPS\Gps.cs" />
+    <Compile Include="WF\Acciones.cs" />
+    <Compile Include="WF\CartaResguardo.cs" />
+    <Compile Include="WF\ConfiguracionHipotecaria.cs" />
+    <Compile Include="WF\Conservador.cs" />
+    <Compile Include="WF\Desembolso.cs" />
+    <Compile Include="WF\DestinoFondo.cs" />
+    <Compile Include="WF\DocumentosEstudioTitulo.cs" />
+    <Compile Include="WF\Etapa.cs" />
+    <Compile Include="WF\EtapasInversionista.cs" />
+    <Compile Include="WF\InstitucionesFinancieras.cs" />
+    <Compile Include="WF\Notarias.cs" />
+    <Compile Include="WF\RegistroAntecedentesSalud.cs" />
+    <Compile Include="WF\RentasCliente.cs" />
+    <Compile Include="WF\ActivosCliente.cs" />
+    <Compile Include="WF\BandejaEntrada.cs" />
+    <Compile Include="WF\Clientes.cs" />
+    <Compile Include="WF\Documentacion.cs" />
+    <Compile Include="WF\Fabrica.cs" />
+    <Compile Include="WF\Inversionista.cs" />
+    <Compile Include="WF\Observacion.cs" />
+    <Compile Include="WF\Participantes.cs" />
+    <Compile Include="WF\PasivosCliente.cs" />
+    <Compile Include="WF\Region.cs" />
+    <Compile Include="WF\Provincia.cs" />
+    <Compile Include="WF\Comuna.cs" />
+    <Compile Include="WF\Destino.cs" />
+    <Compile Include="WF\Eventos.cs" />
+    <Compile Include="WF\Inmobiliaria.cs" />
+    <Compile Include="WF\Objetivo.cs" />
+    <Compile Include="WF\Flujo.cs" />
+    <Compile Include="WF\Paridad.cs" />
+    <Compile Include="WF\PlazosSimulador.cs" />
+    <Compile Include="WF\Producto.cs" />
+    <Compile Include="WF\Proyecto.cs" />
+    <Compile Include="WF\Seguro.cs" />
+    <Compile Include="WF\SegurosContratados.cs" />
+    <Compile Include="WF\SimulacionHipotecaria.cs" />
+    <Compile Include="Core\Auditoria.cs" />
+    <Compile Include="Core\Base.cs" />
+    <Compile Include="Administracion\ConfiguracionGeneral.cs" />
+    <Compile Include="Administracion\Controles.cs" />
+    <Compile Include="Administracion\Menu.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Core\Resultado.cs" />
+    <Compile Include="Administracion\Tabla.cs" />
+    <Compile Include="Administracion\Usuario.cs" />
+    <Compile Include="WF\Solicitud.cs" />
+    <Compile Include="WF\Subsidio.cs" />
+    <Compile Include="WF\Sucursal.cs" />
+    <Compile Include="WF\Tarifado.cs" />
+    <Compile Include="WF\TextoReportes.cs" />
+    <Compile Include="WF\TipoFinanciamiento.cs" />
+    <Compile Include="WF\GastoOperacional.cs" />
+    <Compile Include="WF\Propiedad.cs" />
+    <Compile Include="WF\TipoRenta.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

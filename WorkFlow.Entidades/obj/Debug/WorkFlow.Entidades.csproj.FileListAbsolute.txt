@@ -1,0 +1,6 @@
+C:\Fuentes\GIT\NuevoCapital\WorkFlowNuevoCapital\WorkFlow\WorkFlow.Entidades\bin\Debug\WorkFlow.Entidades.dll
+C:\Fuentes\GIT\NuevoCapital\WorkFlowNuevoCapital\WorkFlow\WorkFlow.Entidades\bin\Debug\WorkFlow.Entidades.pdb
+C:\Fuentes\GIT\NuevoCapital\WorkFlowNuevoCapital\WorkFlow\WorkFlow.Entidades\obj\Debug\WorkFlow.Entidades.csproj.AssemblyReference.cache
+C:\Fuentes\GIT\NuevoCapital\WorkFlowNuevoCapital\WorkFlow\WorkFlow.Entidades\obj\Debug\WorkFlow.Entidades.csproj.CoreCompileInputs.cache
+C:\Fuentes\GIT\NuevoCapital\WorkFlowNuevoCapital\WorkFlow\WorkFlow.Entidades\obj\Debug\WorkFlow.Entidades.dll
+C:\Fuentes\GIT\NuevoCapital\WorkFlowNuevoCapital\WorkFlow\WorkFlow.Entidades\obj\Debug\WorkFlow.Entidades.pdb

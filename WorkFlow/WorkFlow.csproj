@@ -1,0 +1,2032 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F1B2F1DD-FEB1-4BF0-AC2C-8861185A09AA}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WorkFlow</RootNamespace>
+    <AssemblyName>WorkFlow</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.0</TypeScriptToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Anthem, Version=1.5.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\Anthem.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap, Version=3.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.4.1\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.3.3.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+    <Reference Include="wnvhtmlconvert">
+      <HintPath>..\DLL\wnvhtmlconvert.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Administracion\AsignacionMenu.aspx" />
+    <Content Include="Administracion\AsignarControles.aspx" />
+    <Content Include="Administracion\Auditoria.aspx" />
+    <Content Include="Administracion\ConfiguracionGeneralB.aspx" />
+    <Content Include="Administracion\ControlesMenu.aspx" />
+    <Content Include="Administracion\DesbloquearUsuario.aspx" />
+    <Content Include="Administracion\MenuB.aspx" />
+    <Content Include="Administracion\TablasB.aspx" />
+    <Content Include="Administracion\UsuarioB.aspx" />
+    <Content Include="Aplicaciones\ActualizarSolicitud.aspx" />
+    <Content Include="Aplicaciones\BandejaDesembolso.aspx" />
+    <Content Include="Aplicaciones\BandejaEndoso.aspx" />
+    <Content Include="Aplicaciones\BandejaEntrada.aspx" />
+    <Content Include="Aplicaciones\ConfirmarCierreCondiciones.aspx" />
+    <Content Include="Aplicaciones\ConsultaEstadoAvance.aspx" />
+    <Content Include="Aplicaciones\ConsultaInversionista.aspx" />
+    <Content Include="Aplicaciones\Documental.aspx" />
+    <Content Include="Aplicaciones\EstadoAvance.aspx" />
+    <Content Include="Aplicaciones\FlujosParalelos\NuevaDPS.aspx" />
+    <Content Include="Aplicaciones\FlujosParalelos\NuevoEstudioDeTitulos.aspx" />
+    <Content Include="Aplicaciones\FlujosParalelos\NuevaTasacionIndividual.aspx" />
+    <Content Include="Aplicaciones\FlujosParalelos\NuevaTasacionPiloto.aspx" />
+    <Content Include="Aplicaciones\FlujosParalelos\NuevoEstudioTituloPiloto.aspx" />
+    <Content Include="Aplicaciones\HistorialSimulaciones.aspx" />
+    <Content Include="Aplicaciones\MantenedorSolicitudes.aspx" />
+    <Content Include="Aplicaciones\PanelDeControl.aspx" />
+    <Content Include="Aplicaciones\ReasignacionUsuarios.aspx" />
+    <Content Include="Aplicaciones\SimuladorHipotecario.aspx" />
+    <Content Include="Aplicaciones\IngresoSolicitud.aspx" />
+    <Content Include="Aplicaciones\AsignarAnalistaRiesgo.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="Content\Blitzer\images\ui-bg_diagonals-thick_75_f3d8d8_40x40.png" />
+    <Content Include="Content\Blitzer\images\ui-bg_dots-small_65_a6a6a6_2x2.png" />
+    <Content Include="Content\Blitzer\images\ui-bg_flat_0_333333_40x100.png" />
+    <Content Include="Content\Blitzer\images\ui-bg_flat_65_ffffff_40x100.png" />
+    <Content Include="Content\Blitzer\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\Blitzer\images\ui-bg_glass_55_fbf8ee_1x400.png" />
+    <Content Include="Content\Blitzer\images\ui-bg_highlight-hard_100_eeeeee_1x100.png" />
+    <Content Include="Content\Blitzer\images\ui-bg_highlight-hard_100_f6f6f6_1x100.png" />
+    <Content Include="Content\Blitzer\images\ui-bg_highlight-soft_15_cc0000_1x100.png" />
+    <Content Include="Content\Blitzer\images\ui-icons_004276_256x240.png" />
+    <Content Include="Content\Blitzer\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\Blitzer\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\Blitzer\jquery-ui.css" />
+    <Content Include="Content\Blitzer\jquery-ui.min.css" />
+    <Content Include="Content\Blitzer\jquery-ui.structure.css" />
+    <Content Include="Content\Blitzer\jquery-ui.structure.min.css" />
+    <Content Include="Content\Blitzer\jquery-ui.theme.css" />
+    <Content Include="Content\Blitzer\jquery-ui.theme.min.css" />
+    <Content Include="Content\bootstrap - Copia.css" />
+    <Content Include="Content\bootstrap-select.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\dataTables.jqueryui.min.css" />
+    <Content Include="Content\customized-clients.css" />
+    <Content Include="Content\Estilo\images\ui-bg_diagonals-thick_90_eeeeee_40x40.png" />
+    <Content Include="Content\Estilo\images\ui-bg_glass_100_e4f1fb_1x400.png" />
+    <Content Include="Content\Estilo\images\ui-bg_glass_50_3baae3_1x400.png" />
+    <Content Include="Content\Estilo\images\ui-bg_glass_80_d7ebf9_1x400.png" />
+    <Content Include="Content\Estilo\images\ui-bg_highlight-hard_100_f2f5f7_1x100.png" />
+    <Content Include="Content\Estilo\images\ui-bg_highlight-hard_70_000000_1x100.png" />
+    <Content Include="Content\Estilo\images\ui-bg_highlight-soft_100_deedf7_1x100.png" />
+    <Content Include="Content\Estilo\images\ui-bg_highlight-soft_25_ffef8f_1x100.png" />
+    <Content Include="Content\Estilo\images\ui-icons_2694e8_256x240.png" />
+    <Content Include="Content\Estilo\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\Estilo\images\ui-icons_3d80b3_256x240.png" />
+    <Content Include="Content\Estilo\images\ui-icons_72a7cf_256x240.png" />
+    <Content Include="Content\Estilo\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\Estilo\jquery-ui.css" />
+    <Content Include="Content\bootstrap-dialog.min.css" />
+    <Content Include="Content\tipped.css" />
+    <Content Include="DatosGenerales\DatosDocumentosEstudioTitulo.ascx" />
+    <Content Include="DatosGenerales\DatosFichaEvaluacion.ascx" />
+    <Content Include="DatosGenerales\DatosFlujoSolicitud.ascx" />
+    <Content Include="DatosGenerales\DatosInmobiliariaProyecto.ascx" />
+    <Content Include="DatosGenerales\DatosObservaciones.ascx" />
+    <Content Include="DatosGenerales\DatosParticipante.ascx" />
+    <Content Include="DatosGenerales\DatosPropiedad.ascx" />
+    <Content Include="DatosGenerales\DatosRegistroAntecedentesSalud.ascx" />
+    <Content Include="DatosGenerales\DatosReparoRiesgo.ascx" />
+    <Content Include="DatosGenerales\DatosResumen.ascx" />
+    <Content Include="DatosGenerales\DatosSolicitud.ascx" />
+    <Content Include="DatosGenerales\EstadoSituacion.ascx" />
+    <Content Include="Encriptar.aspx" />
+    <Content Include="Error.aspx" />
+    <Content Include="Eventos\Desembolso\LiquidacionMutuo.aspx" />
+    <Content Include="Eventos\Desembolso\Pago.aspx" />
+    <Content Include="Eventos\Desembolso\PreparacionDesembolso.aspx" />
+    <Content Include="Eventos\DPS\ActualizacionParticipantes.aspx" />
+    <Content Include="Eventos\DPS\EnvioAntecedentesSalud.aspx" />
+    <Content Include="Eventos\EstudioDeTitulos\ConfeccionInformeEETTPiloto.aspx" />
+    <Content Include="Eventos\EstudioDeTitulos\EvaluacionEETTPiloto.aspx" />
+    <Content Include="Eventos\EstudioDeTitulos\EvaluacionEETT.aspx" />
+    <Content Include="Eventos\EstudioDeTitulos\ConfeccionInformeEETT.aspx" />
+    <Content Include="Eventos\EstudioDeTitulos\RecepcionAntecedentesEETT.aspx" />
+    <Content Include="Eventos\EstudioDeTitulos\RecepcionAntecedentesEETTPiloto.aspx" />
+    <Content Include="Eventos\EstudioDeTitulos\ReconsideracionEETTPiloto.aspx" />
+    <Content Include="Eventos\EstudioDeTitulos\ReconsideracionEETT.aspx" />
+    <Content Include="Eventos\EstudioDeTitulos\ReparoEETTPioto.aspx" />
+    <Content Include="Eventos\EstudioDeTitulos\ReparoEvaluacionEETTPiloto.aspx" />
+    <Content Include="Eventos\EstudioDeTitulos\ReparoRecepcionAntecedentesPiloto.aspx" />
+    <Content Include="Eventos\EstudioDeTitulos\SolicitudEETTPiloto.aspx" />
+    <Content Include="Eventos\EstudioDeTitulos\TerminoEETTPiloto.aspx" />
+    <Content Include="Eventos\EstudioDeTitulos\TerminoEETT.aspx" />
+    <Content Include="Eventos\EstudioDeTitulos\ReparoEvaluacionEETT.aspx" />
+    <Content Include="Eventos\EstudioDeTitulos\ReparoRecepcionAntecedentes.aspx" />
+    <Content Include="Eventos\ReparoGenerico.aspx" />
+    <Content Include="Eventos\Tasacion\AsignacionTasador.aspx" />
+    <Content Include="Eventos\Tasacion\AsignacionTasadorPiloto.aspx" />
+    <Content Include="Eventos\Tasacion\ConfeccionInforme.aspx" />
+    <Content Include="Eventos\Tasacion\ConfeccionInformePiloto.aspx" />
+    <Content Include="Eventos\Tasacion\CoordinacionDeVisitaPiloto.aspx" />
+    <Content Include="Eventos\Tasacion\SolicitudTasacionPiloto.aspx" />
+    <Content Include="Eventos\Tasacion\SolicitudTasacionPrevia.aspx" />
+    <Content Include="Eventos\Tasacion\TerminoTasacion.aspx" />
+    <Content Include="Eventos\Tasacion\TerminoTasacionPiloto.aspx" />
+    <Content Include="Eventos\ValidarGastosOperacionales.aspx" />
+    <Content Include="Eventos\WfComercial\AsignacionAnalistaRiesgo.aspx" />
+    <Content Include="Eventos\WfComercial\EvaluacionRiesgoInversionista.aspx" />
+    <Content Include="Eventos\WfComercial\ReparoComercial.aspx" />
+    <Content Include="Eventos\WfFormalizacion\AntecedentesOperacion.aspx" />
+    <Content Include="Eventos\WfFormalizacion\BorradorEscritura.aspx" />
+    <Content Include="Eventos\WfFormalizacion\CierreCondiciones.aspx" />
+    <Content Include="Eventos\WfFormalizacion\CierreDeCarpeta.aspx" />
+    <Content Include="Eventos\WfFormalizacion\ConfeccionEscritura.aspx" />
+    <Content Include="Eventos\WfFormalizacion\ConfirmarGastosOperacionales.aspx" />
+    <Content Include="Eventos\WfFormalizacion\ConfirmaTasa.aspx" />
+    <Content Include="Eventos\WfFormalizacion\CoordinacionFirmas.aspx" />
+    <Content Include="Eventos\WfFormalizacion\CorreccionAbogadoCBR.aspx" />
+    <Content Include="Eventos\WfFormalizacion\CorreccionCRAbogado.aspx" />
+    <Content Include="Eventos\WfFormalizacion\CorreccionEscrituraNotaria.aspx" />
+    <Content Include="Eventos\WfFormalizacion\CorreccionNotariaCBR.aspx" />
+    <Content Include="Eventos\WfFormalizacion\DesactivacionOperacion.aspx" />
+    <Content Include="Eventos\WfFormalizacion\EntregaEscrituraCliente.aspx" />
+    <Content Include="Eventos\WfFormalizacion\EnvioBancoAlzante.aspx" />
+    <Content Include="Eventos\WfFormalizacion\EnvioExpedienteAArchivo.aspx" />
+    <Content Include="Eventos\WfFormalizacion\ExcepcionSetComercial.aspx" />
+    <Content Include="Eventos\WfFormalizacion\FirmaCartaResguardo.aspx" />
+    <Content Include="Eventos\WfFormalizacion\FirmaParticipantes.aspx" />
+    <Content Include="Eventos\WfFormalizacion\GeneracionCartaDeResguardo.aspx" />
+    <Content Include="Eventos\WfFormalizacion\InformeFinal.aspx" />
+    <Content Include="Eventos\WfFormalizacion\IngresoACBR.aspx" />
+    <Content Include="Eventos\WfFormalizacion\InscripcionDeHipotecas.aspx" />
+    <Content Include="Eventos\WfFormalizacion\OrdenEscrituracion.aspx" />
+    <Content Include="Eventos\WfFormalizacion\RechazoActivacion.aspx" />
+    <Content Include="Eventos\WfFormalizacion\RecopilacionDocumentos.aspx" />
+    <Content Include="Eventos\WfFormalizacion\RegistroDeGarantia.aspx" />
+    <Content Include="Eventos\WfFormalizacion\ReparoCBR.aspx" />
+    <Content Include="Eventos\WfFormalizacion\ReparoCierreDeCopias.aspx" />
+    <Content Include="DatosGenerales\ResumenResolucion.ascx" />
+    <Content Include="Eventos\WfFormalizacion\CierreDeCopias.aspx" />
+    <Content Include="Eventos\WfComercial\ConfirmaAprobacionComercial.aspx" />
+    <Content Include="Eventos\WfComercial\IngresoEstadoSituacion.aspx" />
+    <Content Include="Eventos\DPS\EsperaResultadosCompañia.aspx" />
+    <Content Include="Eventos\WfFormalizacion\EnvioACierreDeCopias.aspx" />
+    <Content Include="Eventos\WfComercial\EvaluacionRiesgoNC.aspx" />
+    <Content Include="Eventos\WfFormalizacion\FirmaBancoAlzante.aspx" />
+    <Content Include="Eventos\WfFormalizacion\FirmaRepresentanteMutuaria.aspx" />
+    <Content Include="Eventos\WfComercial\IngresoDeuda.aspx" />
+    <Content Include="Eventos\WfFormalizacion\InstruccionNotarial.aspx" />
+    <Content Include="Eventos\WfComercial\PreAprobacionComercial.aspx" />
+    <Content Include="Eventos\Endoso\PreparacionInversionista.aspx" />
+    <Content Include="Eventos\WfComercial\RecepcionAntecedentes.aspx" />
+    <Content Include="Eventos\EstudioDeTitulos\RecepcionEETT.aspx" />
+    <Content Include="Eventos\WfComercial\ReparoDeRiesgo.aspx" />
+    <Content Include="Eventos\EstudioDeTitulos\ReparoEETT.aspx" />
+    <Content Include="Eventos\WfComercial\ReparoJefeComercial.aspx" />
+    <Content Include="Eventos\DPS\ReparosCompañia.aspx" />
+    <Content Include="Eventos\Endoso\ResolucionInversionista.aspx" />
+    <Content Include="Eventos\WfComercial\RevisionJefeComercial.aspx" />
+    <Content Include="Eventos\EstudioDeTitulos\SolicitudEETT.aspx" />
+    <Content Include="Eventos\WfFormalizacion\Reparos.aspx" />
+    <Content Include="Eventos\WfFormalizacion\ReparoVisacion.aspx" />
+    <Content Include="Eventos\WfFormalizacion\RevisionAbogado.aspx" />
+    <Content Include="Eventos\WfFormalizacion\RevisionInscripcion.aspx" />
+    <Content Include="Eventos\WfFormalizacion\SalidaCBR.aspx" />
+    <Content Include="Eventos\WfComercial\SolicitudPreAprobacion.aspx" />
+    <Content Include="Eventos\WfFormalizacion\Portero.aspx" />
+    <Content Include="Eventos\Tasacion\CoordinacionDeVisita.aspx" />
+    <Content Include="Eventos\Tasacion\ReparoTasacion.aspx" />
+    <Content Include="Eventos\Tasacion\SolicitudTasacion.aspx" />
+    <Content Include="Eventos\Tasacion\VisadoTasacion.aspx" />
+    <Content Include="Eventos\Tasacion\VisitaeIngresoDeInformacion.aspx" />
+    <Content Include="Eventos\WfFormalizacion\VerificarEscrituraCorregida.aspx" />
+    <Content Include="Eventos\EstudioDeTitulos\VisadoEETT.aspx" />
+    <Content Include="Eventos\WfFormalizacion\Visado.aspx" />
+    <Content Include="Eventos\WfOriginacionValidacionAntecedentes\ConfeccionMinutaComplementaria.aspx" />
+    <Content Include="Eventos\WfOriginacionValidacionAntecedentes\ConfirmacionPropiedadSeguros.aspx" />
+    <Content Include="Eventos\WfOriginacionValidacionAntecedentes\SolicitudMinutaComplementaria.aspx" />
+    <Content Include="Eventos\WfOriginacionValidacionAntecedentes\ReparoSetComercial.aspx" />
+    <Content Include="Eventos\WfOriginacionValidacionAntecedentes\RevisionCarpetaComercial.aspx" />
+    <Content Include="Eventos\WfOriginacionValidacionAntecedentes\ValidacionFinal.aspx" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Img\asicom_group_small.png" />
+    <Content Include="Img\CarpetaDigital.png" />
+    <Content Include="Img\EncabezadoEvento.png" />
+    <Content Include="Img\EncabezadoModal_small.png" />
+    <Content Include="Img\Grid\AbrirEvento_grid.png" />
+    <Content Include="Img\Grid\Delete_grid.png" />
+    <Content Include="Img\Grid\Descargar_grid.png" />
+    <Content Include="Img\Grid\Editar_grid.png" />
+    <Content Include="Img\Grid\Info_grid.png" />
+    <Content Include="Img\IconDocumento\excel-icon.gif" />
+    <Content Include="Img\IconDocumento\image-icon.gif" />
+    <Content Include="Img\IconDocumento\pdf-icon.gif" />
+    <Content Include="Img\IconDocumento\rar-icon.gif" />
+    <Content Include="Img\IconDocumento\text-icon.gif" />
+    <Content Include="Img\IconDocumento\word-icon.gif" />
+    <Content Include="Img\IconDocumento\zip-icon.gif" />
+    <Content Include="Img\icons\Advertencia.png" />
+    <Content Include="Img\icons\clave.png" />
+    <Content Include="Img\icons\csv.png" />
+    <Content Include="Img\icons\document_new.png" />
+    <Content Include="Img\icons\excel.png" />
+    <Content Include="Img\icons\Export.png" />
+    <Content Include="Img\icons\favicon_small.png" />
+    <Content Include="Img\icons\favicon_xsmall.png" />
+    <Content Include="Img\icons\filetype_pdf.png" />
+    <Content Include="Img\icons\Grabar.png" />
+    <Content Include="Img\icons\json.png" />
+    <Content Include="Img\icons\Limpiar.png" />
+    <Content Include="Img\icons\pdf.png" />
+    <Content Include="Img\icons\png.png" />
+    <Content Include="Img\icons\Por Promesar.png" />
+    <Content Include="Img\icons\ppt.png" />
+    <Content Include="Img\icons\Promesada.png" />
+    <Content Include="Img\icons\sql.png" />
+    <Content Include="Img\icons\txt.png" />
+    <Content Include="Img\icons\usuario.png" />
+    <Content Include="Img\icons\Vencido.png" />
+    <Content Include="Img\icons\Vendida.png" />
+    <Content Include="Img\icons\Vigente.png" />
+    <Content Include="Img\icons\word.png" />
+    <Content Include="Img\icons\xls.png" />
+    <Content Include="Img\icons\xml.png" />
+    <Content Include="Img\LineaAsicom.png" />
+    <Content Include="Img\logoAsicom.jpg" />
+    <Content Include="Img\LogoCliente.png" />
+    <Content Include="Img\LogoClienteMenu.png" />
+    <Content Include="Img\LogoFirma.png" />
+    <Content Include="Img\Roles.png" />
+    <Content Include="Inicio.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="Mantenedores\Acciones.aspx" />
+    <Content Include="Mantenedores\Clientes.aspx" />
+    <Content Include="Mantenedores\FabricasHipotecarias.aspx" />
+    <Content Include="Mantenedores\GastosOperacionales.aspx" />
+    <Content Include="Mantenedores\Inmobiliaria.aspx" />
+    <Content Include="Mantenedores\Proyecto.aspx" />
+    <Content Include="Mantenedores\Producto.aspx" />
+    <Content Include="Mantenedores\Eventos.aspx" />
+    <Content Include="Mantenedores\Destino.aspx" />
+    <Content Include="Mantenedores\Sucursales.aspx" />
+    <Content Include="Mantenedores\Objetivo.aspx" />
+    <Content Include="Mantenedores\TipoFinanciamiento.aspx" />
+    <Content Include="Mantenedores\TipoGGOO.aspx" />
+    <Content Include="Mantenedores\TipoInmueble.aspx" />
+    <Content Include="OperacionesLogin\CambioContraseña.aspx" />
+    <Content Include="RecursosXML\ArchivoRecursos.xml" />
+    <Content Include="Reportes\PDF\CartaDeResguardo.aspx" />
+    <Content Include="Reportes\PDF\CertificadoAprobacion.aspx" />
+    <Content Include="Reportes\PDF\ChecklistOriginacionComercial.aspx" />
+    <Content Include="Reportes\PDF\ConstanciaAprobacion.aspx" />
+    <Content Include="Reportes\PDF\ConstanciaPreAprobacion.aspx" />
+    <Content Include="Reportes\PDF\DocumentacionEstudioTitulo.aspx" />
+    <Content Include="Reportes\PDF\DocumentacionRequeridaEvaluacion.aspx" />
+    <Content Include="Reportes\PDF\FichaAprobacion.aspx" />
+    <Content Include="Reportes\PDF\FichaEvaluacionFinanciamiento.aspx" />
+    <Content Include="Reportes\PDF\HojaResumen.aspx" />
+    <Content Include="Reportes\PDF\OrdenEscrituracion.aspx" />
+    <Content Include="Reportes\PDF\CertificadoPreAprobacion.aspx" />
+    <Content Include="Reportes\PDF\SimulacionCreditoHipotecario.aspx" />
+    <Content Include="Reportes\PDF\SolicitudTasacion.aspx" />
+    <Content Include="Reportes\PlantillasMail\CierreCondiciones.aspx" />
+    <Content Include="Reportes\PlantillasMail\EnvioAdjunto.aspx" />
+    <Content Include="Reportes\PlantillasMail\NuevoUsuario.aspx" />
+    <Content Include="Reportes\XLS\Reportes.aspx" />
+    <Content Include="Repositorio\Pdf\Index.txt" />
+    <Content Include="Content\responsive.dataTables.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Img\asicom_footer.jpg" />
+    <Content Include="Img\icons\descarga.xls" />
+    <Content Include="Master\Operaciones.Master" />
+    <Content Include="Master\Eventos.Master" />
+    <Content Include="Master\Modal.Master" />
+    <Content Include="Master\PDF.Master" />
+    <Content Include="Scripts\bootstrap-dialog.min.js" />
+    <Content Include="Scripts\bootstrap-select.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\chart.js" />
+    <Content Include="Scripts\Chart.min.js" />
+    <Content Include="Scripts\Controles.js" />
+    <Content Include="Scripts\dataTables.bootstrap.min.js" />
+    <Content Include="Scripts\dataTables.fixedHeader.min.js" />
+    <Content Include="Scripts\dataTables.jqueryui.min.js" />
+    <Content Include="Scripts\dataTables.responsive.min.js" />
+    <Content Include="Scripts\Efectos.js" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\excanvas.js" />
+    <Content Include="Reportes\XLS\Plantilla_General.xls" />
+    <Content Include="fonts\Montserrat-Light.ttf" />
+    <Content Include="fonts\Montserrat-Regular.ttf" />
+    <Content Include="fonts\Montserrat-SemiBold.ttf" />
+    <Content Include="fonts\Muli-Bold.ttf" />
+    <Content Include="fonts\Muli-Light.ttf" />
+    <Content Include="fonts\Muli-Semi-BoldItalic.ttf" />
+    <Content Include="fonts\Muli-SemiBold.ttf" />
+    <Content Include="fonts\Muli.ttf" />
+    <Content Include="fonts\Asicom-BOLD01.otf" />
+    <Content Include="fonts\Asicom-BOLD02.otf" />
+    <Content Include="fonts\Asicom-BOLD03.otf" />
+    <Content Include="fonts\Asicom-BOLD04.otf" />
+    <Content Include="fonts\Asicom-BOLD05.otf" />
+    <Content Include="fonts\Asicom-LIGHT01.otf" />
+    <Content Include="fonts\Asicom-LIGHT02.otf" />
+    <Content Include="fonts\Asicom-LIGHT03.otf" />
+    <Content Include="fonts\Asicom-LIGHT04.otf" />
+    <Content Include="fonts\Asicom-LIGHT05.otf" />
+    <Content Include="fonts\Asicom-REGULAR01.otf" />
+    <Content Include="fonts\Asicom-REGULAR02.otf" />
+    <Content Include="fonts\Asicom-REGULAR03.otf" />
+    <Content Include="fonts\Asicom-REGULAR04.otf" />
+    <Content Include="fonts\Asicom-REGULAR05.otf" />
+    <Content Include="fonts\Roboto-Black.ttf" />
+    <Content Include="fonts\Roboto-BlackItalic.ttf" />
+    <Content Include="fonts\Roboto-Bold.ttf" />
+    <Content Include="fonts\Roboto-BoldCondensed.ttf" />
+    <Content Include="fonts\Roboto-BoldCondensedItalic.ttf" />
+    <Content Include="fonts\Roboto-BoldItalic.ttf" />
+    <Content Include="fonts\Roboto-Condensed.ttf" />
+    <Content Include="fonts\Roboto-CondensedItalic.ttf" />
+    <Content Include="fonts\Roboto-Italic.ttf" />
+    <Content Include="fonts\Roboto-Light.ttf" />
+    <Content Include="fonts\Roboto-LightItalic.ttf" />
+    <Content Include="fonts\Roboto-Medium.ttf" />
+    <Content Include="fonts\Roboto-MediumItalic.ttf" />
+    <Content Include="fonts\Roboto-Regular.ttf" />
+    <Content Include="fonts\Roboto-Thin.ttf" />
+    <Content Include="fonts\Roboto-ThinItalic.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="Properties\PublishProfiles\CertificacionCentral.pubxml" />
+    <None Include="Properties\PublishProfiles\CertificacionNuevoCapital.pubxml" />
+    <None Include="Properties\PublishProfiles\DeployWfDemoAsicom.pubxml" />
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\footable.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery.blockUI.js" />
+    <Content Include="Scripts\jquery.dataTables.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\pdfobject.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\responsive.bootstrap.min.js" />
+    <Content Include="Scripts\tipped.js" />
+    <Content Include="Scripts\umd-intro.js" />
+    <Content Include="Scripts\umd-outro.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Scripts\utils.js" />
+    <Content Include="Scripts\Validacion.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="ServiciosWeb\IntegracionHipotecaria.asmx" />
+    <None Include="Properties\PublishProfiles\CertificacionSitioAsicom.pubxml" />
+    <None Include="Properties\PublishProfiles\Desarrollo.pubxml" />
+    <None Include="Properties\PublishProfiles\Produccion.pubxml" />
+    <Content Include="Master\Site.Master" />
+    <Content Include="ServiciosWeb\Seguridad.asmx" />
+    <Content Include="SinAcceso.aspx" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Bundle.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Administracion\AsignacionMenu.aspx.cs">
+      <DependentUpon>AsignacionMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\AsignacionMenu.aspx.designer.cs">
+      <DependentUpon>AsignacionMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\AsignarControles.aspx.cs">
+      <DependentUpon>AsignarControles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\AsignarControles.aspx.designer.cs">
+      <DependentUpon>AsignarControles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\Auditoria.aspx.cs">
+      <DependentUpon>Auditoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\Auditoria.aspx.designer.cs">
+      <DependentUpon>Auditoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\ConfiguracionGeneralB.aspx.cs">
+      <DependentUpon>ConfiguracionGeneralB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\ConfiguracionGeneralB.aspx.designer.cs">
+      <DependentUpon>ConfiguracionGeneralB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\ControlesMenu.aspx.cs">
+      <DependentUpon>ControlesMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\ControlesMenu.aspx.designer.cs">
+      <DependentUpon>ControlesMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\DesbloquearUsuario.aspx.cs">
+      <DependentUpon>DesbloquearUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\DesbloquearUsuario.aspx.designer.cs">
+      <DependentUpon>DesbloquearUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\MenuB.aspx.cs">
+      <DependentUpon>MenuB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\MenuB.aspx.designer.cs">
+      <DependentUpon>MenuB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\TablasB.aspx.cs">
+      <DependentUpon>TablasB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\TablasB.aspx.designer.cs">
+      <DependentUpon>TablasB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\UsuarioB.aspx.cs">
+      <DependentUpon>UsuarioB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\UsuarioB.aspx.designer.cs">
+      <DependentUpon>UsuarioB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicaciones\ActualizarSolicitud.aspx.cs">
+      <DependentUpon>ActualizarSolicitud.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicaciones\ActualizarSolicitud.aspx.designer.cs">
+      <DependentUpon>ActualizarSolicitud.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicaciones\BandejaDesembolso.aspx.cs">
+      <DependentUpon>BandejaDesembolso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicaciones\BandejaDesembolso.aspx.designer.cs">
+      <DependentUpon>BandejaDesembolso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicaciones\BandejaEndoso.aspx.cs">
+      <DependentUpon>BandejaEndoso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicaciones\BandejaEndoso.aspx.designer.cs">
+      <DependentUpon>BandejaEndoso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicaciones\BandejaEntrada.aspx.cs">
+      <DependentUpon>BandejaEntrada.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicaciones\BandejaEntrada.aspx.designer.cs">
+      <DependentUpon>BandejaEntrada.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicaciones\ConfirmarCierreCondiciones.aspx.cs">
+      <DependentUpon>ConfirmarCierreCondiciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicaciones\ConfirmarCierreCondiciones.aspx.designer.cs">
+      <DependentUpon>ConfirmarCierreCondiciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicaciones\ConsultaEstadoAvance.aspx.cs">
+      <DependentUpon>ConsultaEstadoAvance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicaciones\ConsultaEstadoAvance.aspx.designer.cs">
+      <DependentUpon>ConsultaEstadoAvance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicaciones\ConsultaInversionista.aspx.cs">
+      <DependentUpon>ConsultaInversionista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicaciones\ConsultaInversionista.aspx.designer.cs">
+      <DependentUpon>ConsultaInversionista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicaciones\Documental.aspx.cs">
+      <DependentUpon>Documental.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicaciones\Documental.aspx.designer.cs">
+      <DependentUpon>Documental.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicaciones\EstadoAvance.aspx.cs">
+      <DependentUpon>EstadoAvance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicaciones\EstadoAvance.aspx.designer.cs">
+      <DependentUpon>EstadoAvance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicaciones\FlujosParalelos\NuevaDPS.aspx.cs">
+      <DependentUpon>NuevaDPS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicaciones\FlujosParalelos\NuevaDPS.aspx.designer.cs">
+      <DependentUpon>NuevaDPS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicaciones\FlujosParalelos\NuevoEstudioDeTitulos.aspx.cs">
+      <DependentUpon>NuevoEstudioDeTitulos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicaciones\FlujosParalelos\NuevoEstudioDeTitulos.aspx.designer.cs">
+      <DependentUpon>NuevoEstudioDeTitulos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicaciones\FlujosParalelos\NuevaTasacionIndividual.aspx.cs">
+      <DependentUpon>NuevaTasacionIndividual.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicaciones\FlujosParalelos\NuevaTasacionIndividual.aspx.designer.cs">
+      <DependentUpon>NuevaTasacionIndividual.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicaciones\FlujosParalelos\NuevaTasacionPiloto.aspx.cs">
+      <DependentUpon>NuevaTasacionPiloto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicaciones\FlujosParalelos\NuevaTasacionPiloto.aspx.designer.cs">
+      <DependentUpon>NuevaTasacionPiloto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicaciones\FlujosParalelos\NuevoEstudioTituloPiloto.aspx.cs">
+      <DependentUpon>NuevoEstudioTituloPiloto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicaciones\FlujosParalelos\NuevoEstudioTituloPiloto.aspx.designer.cs">
+      <DependentUpon>NuevoEstudioTituloPiloto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicaciones\HistorialSimulaciones.aspx.cs">
+      <DependentUpon>HistorialSimulaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicaciones\HistorialSimulaciones.aspx.designer.cs">
+      <DependentUpon>HistorialSimulaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicaciones\MantenedorSolicitudes.aspx.cs">
+      <DependentUpon>MantenedorSolicitudes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicaciones\MantenedorSolicitudes.aspx.designer.cs">
+      <DependentUpon>MantenedorSolicitudes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicaciones\PanelDeControl.aspx.cs">
+      <DependentUpon>PanelDeControl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicaciones\PanelDeControl.aspx.designer.cs">
+      <DependentUpon>PanelDeControl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicaciones\ReasignacionUsuarios.aspx.cs">
+      <DependentUpon>ReasignacionUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicaciones\ReasignacionUsuarios.aspx.designer.cs">
+      <DependentUpon>ReasignacionUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicaciones\SimuladorHipotecario.aspx.cs">
+      <DependentUpon>SimuladorHipotecario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicaciones\SimuladorHipotecario.aspx.designer.cs">
+      <DependentUpon>SimuladorHipotecario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicaciones\IngresoSolicitud.aspx.cs">
+      <DependentUpon>IngresoSolicitud.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicaciones\IngresoSolicitud.aspx.designer.cs">
+      <DependentUpon>IngresoSolicitud.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Aplicaciones\AsignarAnalistaRiesgo.aspx.cs">
+      <DependentUpon>AsignarAnalistaRiesgo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicaciones\AsignarAnalistaRiesgo.aspx.designer.cs">
+      <DependentUpon>AsignarAnalistaRiesgo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DatosGenerales\DatosDocumentosEstudioTitulo.ascx.cs">
+      <DependentUpon>DatosDocumentosEstudioTitulo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DatosGenerales\DatosDocumentosEstudioTitulo.ascx.designer.cs">
+      <DependentUpon>DatosDocumentosEstudioTitulo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DatosGenerales\DatosFichaEvaluacion.ascx.cs">
+      <DependentUpon>DatosFichaEvaluacion.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DatosGenerales\DatosFichaEvaluacion.ascx.designer.cs">
+      <DependentUpon>DatosFichaEvaluacion.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DatosGenerales\DatosFlujoSolicitud.ascx.cs">
+      <DependentUpon>DatosFlujoSolicitud.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DatosGenerales\DatosFlujoSolicitud.ascx.designer.cs">
+      <DependentUpon>DatosFlujoSolicitud.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DatosGenerales\DatosInmobiliariaProyecto.ascx.cs">
+      <DependentUpon>DatosInmobiliariaProyecto.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DatosGenerales\DatosInmobiliariaProyecto.ascx.designer.cs">
+      <DependentUpon>DatosInmobiliariaProyecto.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DatosGenerales\DatosObservaciones.ascx.cs">
+      <DependentUpon>DatosObservaciones.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DatosGenerales\DatosObservaciones.ascx.designer.cs">
+      <DependentUpon>DatosObservaciones.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DatosGenerales\DatosParticipante.ascx.cs">
+      <DependentUpon>DatosParticipante.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DatosGenerales\DatosParticipante.ascx.designer.cs">
+      <DependentUpon>DatosParticipante.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DatosGenerales\DatosPropiedad.ascx.cs">
+      <DependentUpon>DatosPropiedad.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DatosGenerales\DatosPropiedad.ascx.designer.cs">
+      <DependentUpon>DatosPropiedad.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DatosGenerales\DatosRegistroAntecedentesSalud.ascx.cs">
+      <DependentUpon>DatosRegistroAntecedentesSalud.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DatosGenerales\DatosRegistroAntecedentesSalud.ascx.designer.cs">
+      <DependentUpon>DatosRegistroAntecedentesSalud.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DatosGenerales\DatosReparoRiesgo.ascx.cs">
+      <DependentUpon>DatosReparoRiesgo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DatosGenerales\DatosReparoRiesgo.ascx.designer.cs">
+      <DependentUpon>DatosReparoRiesgo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DatosGenerales\DatosResumen.ascx.cs">
+      <DependentUpon>DatosResumen.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DatosGenerales\DatosResumen.ascx.designer.cs">
+      <DependentUpon>DatosResumen.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DatosGenerales\DatosSolicitud.ascx.cs">
+      <DependentUpon>DatosSolicitud.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DatosGenerales\DatosSolicitud.ascx.designer.cs">
+      <DependentUpon>DatosSolicitud.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DatosGenerales\EstadoSituacion.ascx.cs">
+      <DependentUpon>EstadoSituacion.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DatosGenerales\EstadoSituacion.ascx.designer.cs">
+      <DependentUpon>EstadoSituacion.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Encriptar.aspx.cs">
+      <DependentUpon>Encriptar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Encriptar.aspx.designer.cs">
+      <DependentUpon>Encriptar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\Desembolso\LiquidacionMutuo.aspx.cs">
+      <DependentUpon>LiquidacionMutuo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\Desembolso\LiquidacionMutuo.aspx.designer.cs">
+      <DependentUpon>LiquidacionMutuo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\Desembolso\Pago.aspx.cs">
+      <DependentUpon>Pago.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\Desembolso\Pago.aspx.designer.cs">
+      <DependentUpon>Pago.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\Desembolso\PreparacionDesembolso.aspx.cs">
+      <DependentUpon>PreparacionDesembolso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\Desembolso\PreparacionDesembolso.aspx.designer.cs">
+      <DependentUpon>PreparacionDesembolso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\DPS\ActualizacionParticipantes.aspx.cs">
+      <DependentUpon>ActualizacionParticipantes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\DPS\ActualizacionParticipantes.aspx.designer.cs">
+      <DependentUpon>ActualizacionParticipantes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\DPS\EnvioAntecedentesSalud.aspx.cs">
+      <DependentUpon>EnvioAntecedentesSalud.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\DPS\EnvioAntecedentesSalud.aspx.designer.cs">
+      <DependentUpon>EnvioAntecedentesSalud.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\EstudioDeTitulos\ConfeccionInformeEETTPiloto.aspx.cs">
+      <DependentUpon>ConfeccionInformeEETTPiloto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\EstudioDeTitulos\ConfeccionInformeEETTPiloto.aspx.designer.cs">
+      <DependentUpon>ConfeccionInformeEETTPiloto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\EstudioDeTitulos\EvaluacionEETTPiloto.aspx.cs">
+      <DependentUpon>EvaluacionEETTPiloto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\EstudioDeTitulos\EvaluacionEETTPiloto.aspx.designer.cs">
+      <DependentUpon>EvaluacionEETTPiloto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\EstudioDeTitulos\EvaluacionEETT.aspx.cs">
+      <DependentUpon>EvaluacionEETT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\EstudioDeTitulos\EvaluacionEETT.aspx.designer.cs">
+      <DependentUpon>EvaluacionEETT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\EstudioDeTitulos\ConfeccionInformeEETT.aspx.cs">
+      <DependentUpon>ConfeccionInformeEETT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\EstudioDeTitulos\ConfeccionInformeEETT.aspx.designer.cs">
+      <DependentUpon>ConfeccionInformeEETT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\EstudioDeTitulos\RecepcionAntecedentesEETT.aspx.cs">
+      <DependentUpon>RecepcionAntecedentesEETT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\EstudioDeTitulos\RecepcionAntecedentesEETT.aspx.designer.cs">
+      <DependentUpon>RecepcionAntecedentesEETT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\EstudioDeTitulos\RecepcionAntecedentesEETTPiloto.aspx.cs">
+      <DependentUpon>RecepcionAntecedentesEETTPiloto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\EstudioDeTitulos\RecepcionAntecedentesEETTPiloto.aspx.designer.cs">
+      <DependentUpon>RecepcionAntecedentesEETTPiloto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\EstudioDeTitulos\ReconsideracionEETTPiloto.aspx.cs">
+      <DependentUpon>ReconsideracionEETTPiloto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\EstudioDeTitulos\ReconsideracionEETTPiloto.aspx.designer.cs">
+      <DependentUpon>ReconsideracionEETTPiloto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\EstudioDeTitulos\ReconsideracionEETT.aspx.cs">
+      <DependentUpon>ReconsideracionEETT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\EstudioDeTitulos\ReconsideracionEETT.aspx.designer.cs">
+      <DependentUpon>ReconsideracionEETT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\EstudioDeTitulos\ReparoEETTPioto.aspx.cs">
+      <DependentUpon>ReparoEETTPioto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\EstudioDeTitulos\ReparoEETTPioto.aspx.designer.cs">
+      <DependentUpon>ReparoEETTPioto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\EstudioDeTitulos\ReparoEvaluacionEETTPiloto.aspx.cs">
+      <DependentUpon>ReparoEvaluacionEETTPiloto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\EstudioDeTitulos\ReparoEvaluacionEETTPiloto.aspx.designer.cs">
+      <DependentUpon>ReparoEvaluacionEETTPiloto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\EstudioDeTitulos\ReparoRecepcionAntecedentesPiloto.aspx.cs">
+      <DependentUpon>ReparoRecepcionAntecedentesPiloto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\EstudioDeTitulos\ReparoRecepcionAntecedentesPiloto.aspx.designer.cs">
+      <DependentUpon>ReparoRecepcionAntecedentesPiloto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\EstudioDeTitulos\SolicitudEETTPiloto.aspx.cs">
+      <DependentUpon>SolicitudEETTPiloto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\EstudioDeTitulos\SolicitudEETTPiloto.aspx.designer.cs">
+      <DependentUpon>SolicitudEETTPiloto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\EstudioDeTitulos\TerminoEETTPiloto.aspx.cs">
+      <DependentUpon>TerminoEETTPiloto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\EstudioDeTitulos\TerminoEETTPiloto.aspx.designer.cs">
+      <DependentUpon>TerminoEETTPiloto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\EstudioDeTitulos\TerminoEETT.aspx.cs">
+      <DependentUpon>TerminoEETT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\EstudioDeTitulos\TerminoEETT.aspx.designer.cs">
+      <DependentUpon>TerminoEETT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\EstudioDeTitulos\ReparoEvaluacionEETT.aspx.cs">
+      <DependentUpon>ReparoEvaluacionEETT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\EstudioDeTitulos\ReparoEvaluacionEETT.aspx.designer.cs">
+      <DependentUpon>ReparoEvaluacionEETT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\EstudioDeTitulos\ReparoRecepcionAntecedentes.aspx.cs">
+      <DependentUpon>ReparoRecepcionAntecedentes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\EstudioDeTitulos\ReparoRecepcionAntecedentes.aspx.designer.cs">
+      <DependentUpon>ReparoRecepcionAntecedentes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\ReparoGenerico.aspx.cs">
+      <DependentUpon>ReparoGenerico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\ReparoGenerico.aspx.designer.cs">
+      <DependentUpon>ReparoGenerico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\Tasacion\AsignacionTasador.aspx.cs">
+      <DependentUpon>AsignacionTasador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\Tasacion\AsignacionTasador.aspx.designer.cs">
+      <DependentUpon>AsignacionTasador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\Tasacion\AsignacionTasadorPiloto.aspx.cs">
+      <DependentUpon>AsignacionTasadorPiloto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\Tasacion\AsignacionTasadorPiloto.aspx.designer.cs">
+      <DependentUpon>AsignacionTasadorPiloto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\Tasacion\ConfeccionInforme.aspx.cs">
+      <DependentUpon>ConfeccionInforme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\Tasacion\ConfeccionInforme.aspx.designer.cs">
+      <DependentUpon>ConfeccionInforme.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\Tasacion\ConfeccionInformePiloto.aspx.cs">
+      <DependentUpon>ConfeccionInformePiloto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\Tasacion\ConfeccionInformePiloto.aspx.designer.cs">
+      <DependentUpon>ConfeccionInformePiloto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\Tasacion\CoordinacionDeVisitaPiloto.aspx.cs">
+      <DependentUpon>CoordinacionDeVisitaPiloto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\Tasacion\CoordinacionDeVisitaPiloto.aspx.designer.cs">
+      <DependentUpon>CoordinacionDeVisitaPiloto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\Tasacion\SolicitudTasacionPiloto.aspx.cs">
+      <DependentUpon>SolicitudTasacionPiloto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\Tasacion\SolicitudTasacionPiloto.aspx.designer.cs">
+      <DependentUpon>SolicitudTasacionPiloto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\Tasacion\SolicitudTasacionPrevia.aspx.cs">
+      <DependentUpon>SolicitudTasacionPrevia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\Tasacion\SolicitudTasacionPrevia.aspx.designer.cs">
+      <DependentUpon>SolicitudTasacionPrevia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\Tasacion\TerminoTasacion.aspx.cs">
+      <DependentUpon>TerminoTasacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\Tasacion\TerminoTasacion.aspx.designer.cs">
+      <DependentUpon>TerminoTasacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\Tasacion\TerminoTasacionPiloto.aspx.cs">
+      <DependentUpon>TerminoTasacionPiloto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\Tasacion\TerminoTasacionPiloto.aspx.designer.cs">
+      <DependentUpon>TerminoTasacionPiloto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\ValidarGastosOperacionales.aspx.cs">
+      <DependentUpon>ValidarGastosOperacionales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\ValidarGastosOperacionales.aspx.designer.cs">
+      <DependentUpon>ValidarGastosOperacionales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfComercial\AsignacionAnalistaRiesgo.aspx.cs">
+      <DependentUpon>AsignacionAnalistaRiesgo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfComercial\AsignacionAnalistaRiesgo.aspx.designer.cs">
+      <DependentUpon>AsignacionAnalistaRiesgo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfComercial\EvaluacionRiesgoInversionista.aspx.cs">
+      <DependentUpon>EvaluacionRiesgoInversionista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfComercial\EvaluacionRiesgoInversionista.aspx.designer.cs">
+      <DependentUpon>EvaluacionRiesgoInversionista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfComercial\ReparoComercial.aspx.cs">
+      <DependentUpon>ReparoComercial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfComercial\ReparoComercial.aspx.designer.cs">
+      <DependentUpon>ReparoComercial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\AntecedentesOperacion.aspx.cs">
+      <DependentUpon>AntecedentesOperacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\AntecedentesOperacion.aspx.designer.cs">
+      <DependentUpon>AntecedentesOperacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\BorradorEscritura.aspx.cs">
+      <DependentUpon>BorradorEscritura.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\BorradorEscritura.aspx.designer.cs">
+      <DependentUpon>BorradorEscritura.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\CierreCondiciones.aspx.cs">
+      <DependentUpon>CierreCondiciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\CierreCondiciones.aspx.designer.cs">
+      <DependentUpon>CierreCondiciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\CierreDeCarpeta.aspx.cs">
+      <DependentUpon>CierreDeCarpeta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\CierreDeCarpeta.aspx.designer.cs">
+      <DependentUpon>CierreDeCarpeta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\ConfeccionEscritura.aspx.cs">
+      <DependentUpon>ConfeccionEscritura.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\ConfeccionEscritura.aspx.designer.cs">
+      <DependentUpon>ConfeccionEscritura.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\ConfirmarGastosOperacionales.aspx.cs">
+      <DependentUpon>ConfirmarGastosOperacionales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\ConfirmarGastosOperacionales.aspx.designer.cs">
+      <DependentUpon>ConfirmarGastosOperacionales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\ConfirmaTasa.aspx.cs">
+      <DependentUpon>ConfirmaTasa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\ConfirmaTasa.aspx.designer.cs">
+      <DependentUpon>ConfirmaTasa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\CoordinacionFirmas.aspx.cs">
+      <DependentUpon>CoordinacionFirmas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\CoordinacionFirmas.aspx.designer.cs">
+      <DependentUpon>CoordinacionFirmas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\CorreccionAbogadoCBR.aspx.cs">
+      <DependentUpon>CorreccionAbogadoCBR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\CorreccionAbogadoCBR.aspx.designer.cs">
+      <DependentUpon>CorreccionAbogadoCBR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\CorreccionCRAbogado.aspx.cs">
+      <DependentUpon>CorreccionCRAbogado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\CorreccionCRAbogado.aspx.designer.cs">
+      <DependentUpon>CorreccionCRAbogado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\CorreccionEscrituraNotaria.aspx.cs">
+      <DependentUpon>CorreccionEscrituraNotaria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\CorreccionEscrituraNotaria.aspx.designer.cs">
+      <DependentUpon>CorreccionEscrituraNotaria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\CorreccionNotariaCBR.aspx.cs">
+      <DependentUpon>CorreccionNotariaCBR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\CorreccionNotariaCBR.aspx.designer.cs">
+      <DependentUpon>CorreccionNotariaCBR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\DesactivacionOperacion.aspx.cs">
+      <DependentUpon>DesactivacionOperacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\DesactivacionOperacion.aspx.designer.cs">
+      <DependentUpon>DesactivacionOperacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\EntregaEscrituraCliente.aspx.cs">
+      <DependentUpon>EntregaEscrituraCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\EntregaEscrituraCliente.aspx.designer.cs">
+      <DependentUpon>EntregaEscrituraCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\EnvioBancoAlzante.aspx.cs">
+      <DependentUpon>EnvioBancoAlzante.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\EnvioBancoAlzante.aspx.designer.cs">
+      <DependentUpon>EnvioBancoAlzante.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\EnvioExpedienteAArchivo.aspx.cs">
+      <DependentUpon>EnvioExpedienteAArchivo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\EnvioExpedienteAArchivo.aspx.designer.cs">
+      <DependentUpon>EnvioExpedienteAArchivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\ExcepcionSetComercial.aspx.cs">
+      <DependentUpon>ExcepcionSetComercial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\ExcepcionSetComercial.aspx.designer.cs">
+      <DependentUpon>ExcepcionSetComercial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\FirmaCartaResguardo.aspx.cs">
+      <DependentUpon>FirmaCartaResguardo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\FirmaCartaResguardo.aspx.designer.cs">
+      <DependentUpon>FirmaCartaResguardo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\FirmaParticipantes.aspx.cs">
+      <DependentUpon>FirmaParticipantes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\FirmaParticipantes.aspx.designer.cs">
+      <DependentUpon>FirmaParticipantes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\GeneracionCartaDeResguardo.aspx.cs">
+      <DependentUpon>GeneracionCartaDeResguardo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\GeneracionCartaDeResguardo.aspx.designer.cs">
+      <DependentUpon>GeneracionCartaDeResguardo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\InformeFinal.aspx.cs">
+      <DependentUpon>InformeFinal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\InformeFinal.aspx.designer.cs">
+      <DependentUpon>InformeFinal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\IngresoACBR.aspx.cs">
+      <DependentUpon>IngresoACBR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\IngresoACBR.aspx.designer.cs">
+      <DependentUpon>IngresoACBR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\InscripcionDeHipotecas.aspx.cs">
+      <DependentUpon>InscripcionDeHipotecas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\InscripcionDeHipotecas.aspx.designer.cs">
+      <DependentUpon>InscripcionDeHipotecas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\OrdenEscrituracion.aspx.cs">
+      <DependentUpon>OrdenEscrituracion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\OrdenEscrituracion.aspx.designer.cs">
+      <DependentUpon>OrdenEscrituracion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\RechazoActivacion.aspx.cs">
+      <DependentUpon>RechazoActivacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\RechazoActivacion.aspx.designer.cs">
+      <DependentUpon>RechazoActivacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\RecopilacionDocumentos.aspx.cs">
+      <DependentUpon>RecopilacionDocumentos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\RecopilacionDocumentos.aspx.designer.cs">
+      <DependentUpon>RecopilacionDocumentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\RegistroDeGarantia.aspx.cs">
+      <DependentUpon>RegistroDeGarantia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\RegistroDeGarantia.aspx.designer.cs">
+      <DependentUpon>RegistroDeGarantia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\ReparoCBR.aspx.cs">
+      <DependentUpon>ReparoCBR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\ReparoCBR.aspx.designer.cs">
+      <DependentUpon>ReparoCBR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\ReparoCierreDeCopias.aspx.cs">
+      <DependentUpon>ReparoCierreDeCopias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\ReparoCierreDeCopias.aspx.designer.cs">
+      <DependentUpon>ReparoCierreDeCopias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DatosGenerales\ResumenResolucion.ascx.cs">
+      <DependentUpon>ResumenResolucion.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DatosGenerales\ResumenResolucion.ascx.designer.cs">
+      <DependentUpon>ResumenResolucion.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\CierreDeCopias.aspx.cs">
+      <DependentUpon>CierreDeCopias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\CierreDeCopias.aspx.designer.cs">
+      <DependentUpon>CierreDeCopias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfComercial\IngresoEstadoSituacion.aspx.cs">
+      <DependentUpon>IngresoEstadoSituacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfComercial\IngresoEstadoSituacion.aspx.designer.cs">
+      <DependentUpon>IngresoEstadoSituacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfComercial\ConfirmaAprobacionComercial.aspx.cs">
+      <DependentUpon>ConfirmaAprobacionComercial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfComercial\ConfirmaAprobacionComercial.aspx.designer.cs">
+      <DependentUpon>ConfirmaAprobacionComercial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\DPS\EsperaResultadosCompañia.aspx.cs">
+      <DependentUpon>EsperaResultadosCompañia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\DPS\EsperaResultadosCompañia.aspx.designer.cs">
+      <DependentUpon>EsperaResultadosCompañia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\EnvioACierreDeCopias.aspx.cs">
+      <DependentUpon>EnvioACierreDeCopias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\EnvioACierreDeCopias.aspx.designer.cs">
+      <DependentUpon>EnvioACierreDeCopias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfComercial\EvaluacionRiesgoNC.aspx.cs">
+      <DependentUpon>EvaluacionRiesgoNC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfComercial\EvaluacionRiesgoNC.aspx.designer.cs">
+      <DependentUpon>EvaluacionRiesgoNC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\FirmaBancoAlzante.aspx.cs">
+      <DependentUpon>FirmaBancoAlzante.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\FirmaBancoAlzante.aspx.designer.cs">
+      <DependentUpon>FirmaBancoAlzante.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\FirmaRepresentanteMutuaria.aspx.cs">
+      <DependentUpon>FirmaRepresentanteMutuaria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\FirmaRepresentanteMutuaria.aspx.designer.cs">
+      <DependentUpon>FirmaRepresentanteMutuaria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfComercial\IngresoDeuda.aspx.cs">
+      <DependentUpon>IngresoDeuda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfComercial\IngresoDeuda.aspx.designer.cs">
+      <DependentUpon>IngresoDeuda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\InstruccionNotarial.aspx.cs">
+      <DependentUpon>InstruccionNotarial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\InstruccionNotarial.aspx.designer.cs">
+      <DependentUpon>InstruccionNotarial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfComercial\PreAprobacionComercial.aspx.cs">
+      <DependentUpon>PreAprobacionComercial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfComercial\PreAprobacionComercial.aspx.designer.cs">
+      <DependentUpon>PreAprobacionComercial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\Endoso\PreparacionInversionista.aspx.cs">
+      <DependentUpon>PreparacionInversionista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\Endoso\PreparacionInversionista.aspx.designer.cs">
+      <DependentUpon>PreparacionInversionista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfComercial\RecepcionAntecedentes.aspx.cs">
+      <DependentUpon>RecepcionAntecedentes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfComercial\RecepcionAntecedentes.aspx.designer.cs">
+      <DependentUpon>RecepcionAntecedentes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\EstudioDeTitulos\RecepcionEETT.aspx.cs">
+      <DependentUpon>RecepcionEETT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\EstudioDeTitulos\RecepcionEETT.aspx.designer.cs">
+      <DependentUpon>RecepcionEETT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfComercial\ReparoDeRiesgo.aspx.cs">
+      <DependentUpon>ReparoDeRiesgo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfComercial\ReparoDeRiesgo.aspx.designer.cs">
+      <DependentUpon>ReparoDeRiesgo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\EstudioDeTitulos\ReparoEETT.aspx.cs">
+      <DependentUpon>ReparoEETT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\EstudioDeTitulos\ReparoEETT.aspx.designer.cs">
+      <DependentUpon>ReparoEETT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfComercial\ReparoJefeComercial.aspx.cs">
+      <DependentUpon>ReparoJefeComercial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfComercial\ReparoJefeComercial.aspx.designer.cs">
+      <DependentUpon>ReparoJefeComercial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\DPS\ReparosCompañia.aspx.cs">
+      <DependentUpon>ReparosCompañia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\DPS\ReparosCompañia.aspx.designer.cs">
+      <DependentUpon>ReparosCompañia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\Endoso\ResolucionInversionista.aspx.cs">
+      <DependentUpon>ResolucionInversionista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\Endoso\ResolucionInversionista.aspx.designer.cs">
+      <DependentUpon>ResolucionInversionista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfComercial\RevisionJefeComercial.aspx.cs">
+      <DependentUpon>RevisionJefeComercial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfComercial\RevisionJefeComercial.aspx.designer.cs">
+      <DependentUpon>RevisionJefeComercial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\EstudioDeTitulos\SolicitudEETT.aspx.cs">
+      <DependentUpon>SolicitudEETT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\EstudioDeTitulos\SolicitudEETT.aspx.designer.cs">
+      <DependentUpon>SolicitudEETT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\Reparos.aspx.cs">
+      <DependentUpon>Reparos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\Reparos.aspx.designer.cs">
+      <DependentUpon>Reparos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\ReparoVisacion.aspx.cs">
+      <DependentUpon>ReparoVisacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\ReparoVisacion.aspx.designer.cs">
+      <DependentUpon>ReparoVisacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\RevisionAbogado.aspx.cs">
+      <DependentUpon>RevisionAbogado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\RevisionAbogado.aspx.designer.cs">
+      <DependentUpon>RevisionAbogado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\RevisionInscripcion.aspx.cs">
+      <DependentUpon>RevisionInscripcion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\RevisionInscripcion.aspx.designer.cs">
+      <DependentUpon>RevisionInscripcion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\SalidaCBR.aspx.cs">
+      <DependentUpon>SalidaCBR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\SalidaCBR.aspx.designer.cs">
+      <DependentUpon>SalidaCBR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfComercial\SolicitudPreAprobacion.aspx.cs">
+      <DependentUpon>SolicitudPreAprobacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfComercial\SolicitudPreAprobacion.aspx.designer.cs">
+      <DependentUpon>SolicitudPreAprobacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\Portero.aspx.cs">
+      <DependentUpon>Portero.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\Portero.aspx.designer.cs">
+      <DependentUpon>Portero.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\Tasacion\CoordinacionDeVisita.aspx.cs">
+      <DependentUpon>CoordinacionDeVisita.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\Tasacion\CoordinacionDeVisita.aspx.designer.cs">
+      <DependentUpon>CoordinacionDeVisita.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\Tasacion\ReparoTasacion.aspx.cs">
+      <DependentUpon>ReparoTasacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\Tasacion\ReparoTasacion.aspx.designer.cs">
+      <DependentUpon>ReparoTasacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\Tasacion\SolicitudTasacion.aspx.cs">
+      <DependentUpon>SolicitudTasacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\Tasacion\SolicitudTasacion.aspx.designer.cs">
+      <DependentUpon>SolicitudTasacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\Tasacion\VisadoTasacion.aspx.cs">
+      <DependentUpon>VisadoTasacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\Tasacion\VisadoTasacion.aspx.designer.cs">
+      <DependentUpon>VisadoTasacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\Tasacion\VisitaeIngresoDeInformacion.aspx.cs">
+      <DependentUpon>VisitaeIngresoDeInformacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\Tasacion\VisitaeIngresoDeInformacion.aspx.designer.cs">
+      <DependentUpon>VisitaeIngresoDeInformacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\VerificarEscrituraCorregida.aspx.cs">
+      <DependentUpon>VerificarEscrituraCorregida.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\VerificarEscrituraCorregida.aspx.designer.cs">
+      <DependentUpon>VerificarEscrituraCorregida.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\EstudioDeTitulos\VisadoEETT.aspx.cs">
+      <DependentUpon>VisadoEETT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\EstudioDeTitulos\VisadoEETT.aspx.designer.cs">
+      <DependentUpon>VisadoEETT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\Visado.aspx.cs">
+      <DependentUpon>Visado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfFormalizacion\Visado.aspx.designer.cs">
+      <DependentUpon>Visado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfOriginacionValidacionAntecedentes\ConfeccionMinutaComplementaria.aspx.cs">
+      <DependentUpon>ConfeccionMinutaComplementaria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfOriginacionValidacionAntecedentes\ConfeccionMinutaComplementaria.aspx.designer.cs">
+      <DependentUpon>ConfeccionMinutaComplementaria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfOriginacionValidacionAntecedentes\ConfirmacionPropiedadSeguros.aspx.cs">
+      <DependentUpon>ConfirmacionPropiedadSeguros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfOriginacionValidacionAntecedentes\ConfirmacionPropiedadSeguros.aspx.designer.cs">
+      <DependentUpon>ConfirmacionPropiedadSeguros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfOriginacionValidacionAntecedentes\SolicitudMinutaComplementaria.aspx.cs">
+      <DependentUpon>SolicitudMinutaComplementaria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfOriginacionValidacionAntecedentes\SolicitudMinutaComplementaria.aspx.designer.cs">
+      <DependentUpon>SolicitudMinutaComplementaria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfOriginacionValidacionAntecedentes\ReparoSetComercial.aspx.cs">
+      <DependentUpon>ReparoSetComercial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfOriginacionValidacionAntecedentes\ReparoSetComercial.aspx.designer.cs">
+      <DependentUpon>ReparoSetComercial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfOriginacionValidacionAntecedentes\RevisionCarpetaComercial.aspx.cs">
+      <DependentUpon>RevisionCarpetaComercial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfOriginacionValidacionAntecedentes\RevisionCarpetaComercial.aspx.designer.cs">
+      <DependentUpon>RevisionCarpetaComercial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\WfOriginacionValidacionAntecedentes\ValidacionFinal.aspx.cs">
+      <DependentUpon>ValidacionFinal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\WfOriginacionValidacionAntecedentes\ValidacionFinal.aspx.designer.cs">
+      <DependentUpon>ValidacionFinal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Inicio.aspx.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenedores\Acciones.aspx.cs">
+      <DependentUpon>Acciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenedores\Acciones.aspx.designer.cs">
+      <DependentUpon>Acciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenedores\Clientes.aspx.cs">
+      <DependentUpon>Clientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenedores\Clientes.aspx.designer.cs">
+      <DependentUpon>Clientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenedores\FabricasHipotecarias.aspx.cs">
+      <DependentUpon>FabricasHipotecarias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenedores\FabricasHipotecarias.aspx.designer.cs">
+      <DependentUpon>FabricasHipotecarias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenedores\GastosOperacionales.aspx.cs">
+      <DependentUpon>GastosOperacionales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenedores\GastosOperacionales.aspx.designer.cs">
+      <DependentUpon>GastosOperacionales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenedores\Inmobiliaria.aspx.cs">
+      <DependentUpon>Inmobiliaria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenedores\Inmobiliaria.aspx.designer.cs">
+      <DependentUpon>Inmobiliaria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenedores\Proyecto.aspx.cs">
+      <DependentUpon>Proyecto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenedores\Proyecto.aspx.designer.cs">
+      <DependentUpon>Proyecto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenedores\Producto.aspx.cs">
+      <DependentUpon>Producto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenedores\Producto.aspx.designer.cs">
+      <DependentUpon>Producto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenedores\Eventos.aspx.cs">
+      <DependentUpon>Eventos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenedores\Eventos.aspx.designer.cs">
+      <DependentUpon>Eventos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenedores\Destino.aspx.cs">
+      <DependentUpon>Destino.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenedores\Destino.aspx.designer.cs">
+      <DependentUpon>Destino.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenedores\Sucursales.aspx.cs">
+      <DependentUpon>Sucursales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenedores\Sucursales.aspx.designer.cs">
+      <DependentUpon>Sucursales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenedores\Objetivo.aspx.cs">
+      <DependentUpon>Objetivo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenedores\Objetivo.aspx.designer.cs">
+      <DependentUpon>Objetivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenedores\TipoFinanciamiento.aspx.cs">
+      <DependentUpon>TipoFinanciamiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenedores\TipoFinanciamiento.aspx.designer.cs">
+      <DependentUpon>TipoFinanciamiento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenedores\TipoGGOO.aspx.cs">
+      <DependentUpon>TipoGGOO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenedores\TipoGGOO.aspx.designer.cs">
+      <DependentUpon>TipoGGOO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenedores\TipoInmueble.aspx.cs">
+      <DependentUpon>TipoInmueble.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenedores\TipoInmueble.aspx.designer.cs">
+      <DependentUpon>TipoInmueble.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Eventos.Master.cs">
+      <DependentUpon>Eventos.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\Eventos.Master.designer.cs">
+      <DependentUpon>Eventos.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Modal.Master.cs">
+      <DependentUpon>Modal.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\Modal.Master.designer.cs">
+      <DependentUpon>Modal.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Operaciones.Master.cs">
+      <DependentUpon>Operaciones.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\Operaciones.Master.designer.cs">
+      <DependentUpon>Operaciones.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Master\PDF.Master.cs">
+      <DependentUpon>PDF.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\PDF.Master.designer.cs">
+      <DependentUpon>PDF.Master</DependentUpon>
+    </Compile>
+    <Compile Include="OperacionesLogin\CambioContraseña.aspx.cs">
+      <DependentUpon>CambioContraseña.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OperacionesLogin\CambioContraseña.aspx.designer.cs">
+      <DependentUpon>CambioContraseña.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Master\Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\PDF\CartaDeResguardo.aspx.cs">
+      <DependentUpon>CartaDeResguardo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\PDF\CartaDeResguardo.aspx.designer.cs">
+      <DependentUpon>CartaDeResguardo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\PDF\CertificadoAprobacion.aspx.cs">
+      <DependentUpon>CertificadoAprobacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\PDF\CertificadoAprobacion.aspx.designer.cs">
+      <DependentUpon>CertificadoAprobacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\PDF\ChecklistOriginacionComercial.aspx.cs">
+      <DependentUpon>ChecklistOriginacionComercial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\PDF\ChecklistOriginacionComercial.aspx.designer.cs">
+      <DependentUpon>ChecklistOriginacionComercial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\PDF\ConstanciaAprobacion.aspx.cs">
+      <DependentUpon>ConstanciaAprobacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\PDF\ConstanciaAprobacion.aspx.designer.cs">
+      <DependentUpon>ConstanciaAprobacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\PDF\ConstanciaPreAprobacion.aspx.cs">
+      <DependentUpon>ConstanciaPreAprobacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\PDF\ConstanciaPreAprobacion.aspx.designer.cs">
+      <DependentUpon>ConstanciaPreAprobacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\PDF\DocumentacionEstudioTitulo.aspx.cs">
+      <DependentUpon>DocumentacionEstudioTitulo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\PDF\DocumentacionEstudioTitulo.aspx.designer.cs">
+      <DependentUpon>DocumentacionEstudioTitulo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\PDF\DocumentacionRequeridaEvaluacion.aspx.cs">
+      <DependentUpon>DocumentacionRequeridaEvaluacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\PDF\DocumentacionRequeridaEvaluacion.aspx.designer.cs">
+      <DependentUpon>DocumentacionRequeridaEvaluacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\PDF\FichaAprobacion.aspx.cs">
+      <DependentUpon>FichaAprobacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\PDF\FichaAprobacion.aspx.designer.cs">
+      <DependentUpon>FichaAprobacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\PDF\FichaEvaluacionFinanciamiento.aspx.cs">
+      <DependentUpon>FichaEvaluacionFinanciamiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\PDF\FichaEvaluacionFinanciamiento.aspx.designer.cs">
+      <DependentUpon>FichaEvaluacionFinanciamiento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\PDF\HojaResumen.aspx.cs">
+      <DependentUpon>HojaResumen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\PDF\HojaResumen.aspx.designer.cs">
+      <DependentUpon>HojaResumen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\PDF\OrdenEscrituracion.aspx.cs">
+      <DependentUpon>OrdenEscrituracion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\PDF\OrdenEscrituracion.aspx.designer.cs">
+      <DependentUpon>OrdenEscrituracion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\PDF\CertificadoPreAprobacion.aspx.cs">
+      <DependentUpon>CertificadoPreAprobacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\PDF\CertificadoPreAprobacion.aspx.designer.cs">
+      <DependentUpon>CertificadoPreAprobacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\PDF\SimulacionCreditoHipotecario.aspx.cs">
+      <DependentUpon>SimulacionCreditoHipotecario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\PDF\SimulacionCreditoHipotecario.aspx.designer.cs">
+      <DependentUpon>SimulacionCreditoHipotecario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\PDF\SolicitudTasacion.aspx.cs">
+      <DependentUpon>SolicitudTasacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\PDF\SolicitudTasacion.aspx.designer.cs">
+      <DependentUpon>SolicitudTasacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\PlantillasMail\CierreCondiciones.aspx.cs">
+      <DependentUpon>CierreCondiciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\PlantillasMail\CierreCondiciones.aspx.designer.cs">
+      <DependentUpon>CierreCondiciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\PlantillasMail\EnvioAdjunto.aspx.cs">
+      <DependentUpon>EnvioAdjunto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\PlantillasMail\EnvioAdjunto.aspx.designer.cs">
+      <DependentUpon>EnvioAdjunto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\PlantillasMail\NuevoUsuario.aspx.cs">
+      <DependentUpon>NuevoUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\PlantillasMail\NuevoUsuario.aspx.designer.cs">
+      <DependentUpon>NuevoUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\XLS\Reportes.aspx.cs">
+      <DependentUpon>Reportes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\XLS\Reportes.aspx.designer.cs">
+      <DependentUpon>Reportes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosWeb\IntegracionHipotecaria.asmx.cs">
+      <DependentUpon>IntegracionHipotecaria.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ServiciosWeb\Seguridad.asmx.cs">
+      <DependentUpon>Seguridad.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SinAcceso.aspx.cs">
+      <DependentUpon>SinAcceso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SinAcceso.aspx.designer.cs">
+      <DependentUpon>SinAcceso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Repositorio\TemporalesMail\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WorkFlow.AccesoDatos\WorkFlow.AccesoDatos.csproj">
+      <Project>{4C526A26-AA1C-449D-A1AD-1F9AA5B76626}</Project>
+      <Name>WorkFlow.AccesoDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WorkFlow.Entidades\WorkFlow.Entidades.csproj">
+      <Project>{bdbc8498-b1f5-468a-9aa3-2437ec517311}</Project>
+      <Name>WorkFlow.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WorkFlow.General\WorkFlow.General.csproj">
+      <Project>{b9d1fdd9-63b1-40c7-8fdd-9828206c279b}</Project>
+      <Name>WorkFlow.General</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WorkFlow.Negocio.Administracion\WorkFlow.Negocio.Administracion.csproj">
+      <Project>{d7b63276-523a-46f1-a2d1-070ad50260d3}</Project>
+      <Name>WorkFlow.Negocio.Administracion</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WorkFlow.Negocio.Documental\WorkFlow.Negocio.Documental.csproj">
+      <Project>{ca393ad2-ecf1-4872-95a4-4c6b44c07ac7}</Project>
+      <Name>WorkFlow.Negocio.Documental</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WorkFlow.Negocio.WorkFlow\WorkFlow.Negocio.WorkFlow.csproj">
+      <Project>{1c9d805c-9d6e-44e2-a033-eda0a3cd82dd}</Project>
+      <Name>WorkFlow.Negocio.WorkFlow</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>4729</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:4729/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target> 
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

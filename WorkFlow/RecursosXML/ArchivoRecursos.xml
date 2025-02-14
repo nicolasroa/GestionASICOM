@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Recursos>
+  <Configuracion>
+
+    <!--Parámetros-->
+    <Parametro Nombre ="NombreAplicacion" Valor="WF Asicom"></Parametro>
+    <Parametro Nombre ="Ruta" Valor="http://172.20.0.43/Parametros/Login.aspx"></Parametro>
+    <Parametro Nombre ="NombrePagina" Valor="WF (DESA)"></Parametro>
+    <Parametro Nombre ="ModoDebug" Valor="True"></Parametro>
+
+    <Parametro Nombre ="DiaCalculoUF" Valor="09/"></Parametro>
+    <Parametro Nombre ="RutaValidacionPendiente" Valor="~/Img/Controles/GridView/Pendiente.png"></Parametro>
+    <Parametro Nombre ="RutaValidacionCorrecto" Valor="~/Img/Controles/GridView/Correcto.png"></Parametro>
+    <Parametro Nombre ="RutaValidacionIncorrecto" Valor="~/Img/Controles/GridView/Incorrecto.png"></Parametro>
+
+    <Parametro Nombre ="RutaConsultaIPC" Valor="http://www.sii.cl/pagina/valores/utm/utm{0}.htm"></Parametro>
+    <Parametro Nombre ="RutaConsultaFactorActualizacionIPC" Valor="http://www.sii.cl/pagina/renta/{0}/grandes_contribuyentes.htm"></Parametro>
+    <Parametro Nombre ="RutaConsultaTMC" Valor="http://www.sbif.cl/sbifweb/servlet/InfoFinanciera?indice=4.2.1{0}FECHA={1}"></Parametro>
+    <Parametro Nombre ="RutaConsultaUF" Valor="http://www.sii.cl/pagina/valores/uf/uf{0}.htm"></Parametro>
+
+    <Parametro Nombre ="MailExplotacion" Valor="nicolas.roa@asicom.cl"></Parametro>
+    <Parametro Nombre ="MailControl" Valor="control@asicom.cl"></Parametro>
+
+
+
+
+
+    <!--Texto en Pantalla.........................................................................................-->
+    <Parametro Nombre ="FechaActualizacion" Valor="Fecha de Última Actualización: "></Parametro>
+    <!--##########################################################################################################-->
+
+
+    <!--Configuracion Cuenta de Correo.........................................................................................-->
+    <Parametro Nombre ="UsuarioMail" Valor="prueba.2013.asicom"></Parametro>
+    <Parametro Nombre ="ClaveMail" Valor="asicom.2013"></Parametro>
+    <Parametro Nombre ="DireccionMail" Valor="prueba.2013.asicom@gmail.com"></Parametro>
+    <Parametro Nombre ="PuertoSMTP" Valor="587"></Parametro>
+    <Parametro Nombre ="ServidorSMTP" Valor="smtp.gmail.com"></Parametro>
+
+    <!--##########################################################################################################-->
+    <!--Mensajes al Usuario-->
+    <!--Errores...................................................................................................-->
+    <Parametro Nombre ="ErrorGuardar" Valor="Problemas al Guardar la Entidad: "></Parametro>
+    <Parametro Nombre ="ErrorListar" Valor="Problemas al Listar la Entidad: "></Parametro>
+    <Parametro Nombre ="ErrorLimpiar" Valor="Problemas al Limpiar el Formulario: "></Parametro>
+    <Parametro Nombre ="ErrorEliminar" Valor="Problemas al Eliminar la Entidad: "></Parametro>
+    <Parametro Nombre ="ErrorCargarGrid" Valor="Problemas al Cargar el GridView con la Entidad: "></Parametro>
+    <Parametro Nombre ="ErrorCargarCombo" Valor="Problemas al Cargar el Combo con la Entidad: "></Parametro>
+    <Parametro Nombre ="ErrorCargarCheckBoxList" Valor="Problemas al Cargar el CheckBoxList con la Entidad: "></Parametro>
+    <Parametro Nombre ="ErrorCargarRadioButtonList" Valor="Problemas al Cargar el Radio Button con la Entidad: "></Parametro>
+    <Parametro Nombre ="ErrorCargarEntidad" Valor="Problemas al Encontrar los datos de la Entidad: "></Parametro>
+    <Parametro Nombre ="ErrorCargarFormulario" Valor="Problemas al llenar el Formulario de la Entidad: "></Parametro>
+    <Parametro Nombre ="ErrorConfiguracionNoEncontrada" Valor="Configuración General del Sistema no Encontrada, Favor Infomar al Administrador"></Parametro>
+    <Parametro Nombre ="ErrorCodigoInactivoNoEncontrado" Valor="Código Inactivo no Encontrado, Favor Informar al Administrador"></Parametro>
+    <Parametro Nombre ="ErrorProcesarAsignacionMenu" Valor="Problemas al Procesar la Asignación de Menu, favor contacte a un Administrador."></Parametro>
+    <Parametro Nombre ="ErrorProcesarAsignacionControles" Valor="Problemas al Procesar la Asignación de Controles, favor contacte a un Administrador."></Parametro>
+    <Parametro Nombre ="ErrorGuardar" Valor="Problemas al Validar la Entidad: "></Parametro>
+    <!--##########################################################################################################-->
+    <!--Procesos Terminados.......................................................................................-->
+    <Parametro Nombre ="RegistroGuardado" Valor="Registro Guardado Correctamente"></Parametro>
+    <Parametro Nombre ="CambioClaveCorrecto" Valor="La clave se ha cambiado correctamente."></Parametro>
+    <Parametro Nombre ="RecuperacionClaveCorrecta" Valor="Su clave se ha cambiado, y ha sido enviada al correo electrónico asociado a su cuenta"></Parametro>
+    <Parametro Nombre ="AsignacionMenuCompleta" Valor="Asignación de Menú realizada en forma correcta"></Parametro>
+    <Parametro Nombre ="AsignacionControlesCompleta" Valor="Asignación de Controles realizada en forma correcta"></Parametro>
+    <Parametro Nombre ="DesbloqueoUsuarioCorrecto" Valor="Usuario Desbloqueado Correctamente."></Parametro>
+    <!--##########################################################################################################-->
+    <!--Resultado de Validacion de Usuario........................................................................-->
+    <Parametro Nombre ="MensajeNoExiste" Valor="Nombre de Usuario no encontrado, Favor Validar."></Parametro>
+    <Parametro Nombre ="MensajeInactivo" Valor="Usuario Inactivo, Favor Informar al Administrador."></Parametro>
+    <Parametro Nombre ="MensajeErrorClave" Valor="La Clave Ingresada no Corresponde, Favor Validar."></Parametro>
+    <Parametro Nombre ="MensajeCambioClave" Valor="Su Clave ha Caducado, Favor Realizar el Cambio."></Parametro>
+
+    <!--##########################################################################################################-->
+    <!--VALIDACIONES..............................................................................................-->
+    <Parametro Nombre ="ValidarNombre" Valor="Debe Ingresar un Nombre."></Parametro>
+    <Parametro Nombre ="ValidarApellido" Valor="Debe Ingresar un Apellido."></Parametro>
+    <Parametro Nombre ="ValidarRut" Valor="Debe Ingresar un Rut."></Parametro>
+    <Parametro Nombre ="ValidarMail" Valor="Debe Ingresar un Mail."></Parametro>
+    <Parametro Nombre ="ValidarRol" Valor="Debe Seleccionar un Rol."></Parametro>
+    <Parametro Nombre ="ValidarEstado" Valor="Debe Seleccionar un Estado."></Parametro>
+    <Parametro Nombre ="ValidarTamanioClave" Valor="Debe Ingresar un Tamaño mínimo de la Clave."></Parametro>
+    <Parametro Nombre ="ValidarPlazoValidez" Valor="Debe Ingresar un Plazo para la Validez de la Clave."></Parametro>
+    <Parametro Nombre ="ValidarIntentos" Valor="Debe Ingresar un N° de Intentos Máximo para el Inicio de Session."></Parametro>
+    <Parametro Nombre ="ValidarNotificacion" Valor="Debe Ingresar una Cantidad de Dias para el plazo de notificacion antes del vencimiento de la Clave."></Parametro>
+    <Parametro Nombre ="ValidarUrlSitio" Valor="Debe Ingresar una URL para le Sitio principal"></Parametro>
+    <Parametro Nombre ="ValidarNombreUsuario" Valor="Debe Ingresar un Nombre de Usuario para Continuar"></Parametro>
+    <Parametro Nombre ="ValidarClave" Valor="Debe Ingresar una Clave para Continuar"></Parametro>
+    <Parametro Nombre ="ValidarDescripcion" Valor="Debe Ingresar una Descripcion para Continuar"></Parametro>
+    <Parametro Nombre ="ValidarTipoMenu" Valor="Debe Seleccionar un Tipo de Menu para Continuar"></Parametro>
+    <Parametro Nombre ="ValidarClavesDistintas" Valor="Las Claves Nuevas no son Iguales, favor validar información"></Parametro>
+    <Parametro Nombre ="ValidarClavesAnterior" Valor="La Clave Actual Ingresada no Corresponde, Favor Validar"></Parametro>
+    <Parametro Nombre ="ValidarFormatoClave" Valor="La Clave Ingresada no cumple con los estandares de Seguridad, debe contener Letras y Numeros  y tener un Minimo de "></Parametro>
+    <Parametro Nombre ="ValidarPreguntaSecreta" Valor="Debe Seleccionar una Pregunta Secreta, Antes de Cambiar la Clave "></Parametro>
+    <Parametro Nombre ="ValidarRespuesta" Valor="Debe Ingresar una Respuesta "></Parametro>
+    <Parametro Nombre ="ValidarRespuestaDistintas" Valor="Las respuestas no son iguales, favor validar "></Parametro>
+    <Parametro Nombre ="ValidarTipoUsuario" Valor="Debe Seleccionar un Tipo de Usuario "></Parametro>
+    <Parametro Nombre ="ValidarSeleccionUsuario" Valor="Debe Seleccionar un Usuario para continuar"></Parametro>
+    <Parametro Nombre ="ValidarIdInterno" Valor="Debe Ingresar un Id Interno"></Parametro>
+    <Parametro Nombre ="ValidarDatoObligatorio" Valor="Debe completar este dato"></Parametro>
+
+
+    <!--Tipo de Documento..............................................................................................-->
+    <Parametro Nombre ="ValidarTipoOrigen" Valor="Debe Seleccionar un Tipo de Origen"></Parametro>
+    <!--Permisos..............................................................................................-->
+    <Parametro Nombre ="SinPermisoCrear" Valor="Sr. Usuario usted no Tiene Permiso para Crear en esta Página, Consulte con el Administrador"></Parametro>
+    <Parametro Nombre ="SinPermisoModificar" Valor="Sr. Usuario usted no Tiene Permiso para Modificar en esta Página, Consulte con el Administrador"></Parametro>
+    <Parametro Nombre ="SinPermisoEliminar" Valor="Sr. Usuario usted no Tiene Permiso para Eliminar en esta Página, Consulte con el Administrador"></Parametro>
+
+    <!--Parametros..............................................................................................-->
+    <Parametro Nombre ="ValidarRolControlInterno" Valor="Rol de Control Interno no Ingresado en el Sistema, Favor Informar al Administrador"></Parametro>
+    <Parametro Nombre ="ValidarRolExplotacion" Valor="Rol de Explotación no Ingresado en el Sistema, Favor Informar al Administrador"></Parametro>
+
+    <!--Monenas..............................................................................................-->
+    <Parametro Nombre ="ValidarUF" Valor="Debe Ingresar un Valor a la UF"></Parametro>
+    <Parametro Nombre ="ValidarFechaUltimaUF" Valor="Debe Ingresar una Fecha para realizar el Calculo"></Parametro>
+    <Parametro Nombre ="ValidarIPC" Valor="Debe Ingresar una Fecha para realizar el Calculo"></Parametro>
+    <Parametro Nombre ="ValidarUfIngresada" Valor="El valor de la UF ya se Encuentra Calculado para esta Fecha"></Parametro>
+
+    <!--IPC..............................................................................................-->
+    <Parametro Nombre ="ValidarValorIpc" Valor="El Valor Ingresado no es Válido"></Parametro>
+    <Parametro Nombre ="ValidarVariacionIpc" Valor="El Valor Ingresado no es Válido"></Parametro>
+
+
+
+    <!--##########################################################################################################-->
+
+    <!--Servidores..............................................................................................-->
+    <Parametro Nombre ="ValidarDescripcionServidor" Valor="Debe Ingresar una Descripción al Servidor"></Parametro>
+    <Parametro Nombre ="ValidarDireccionIp" Valor="Debe Ingresar una Dirección IP"></Parametro>
+    <Parametro Nombre ="ValidarAmbiente" Valor="Debe Seleccionar un Ambiente"></Parametro>
+
+    <!--##########################################################################################################-->
+
+    <!--Aplicacion..............................................................................................-->
+    <Parametro Nombre ="ValidarServidor" Valor="Debe Seleccionar un Servidor"></Parametro>
+
+    <!--##########################################################################################################-->
+    <!--DiasNoProceso..............................................................................................-->
+    
+    <Parametro Nombre ="ValidarTipoAsignacion" Valor="Debe Seleccionar un Tipo deAsignación"></Parametro>
+    <Parametro Nombre ="ValidarRegion" Valor="Debe Seleccionar una Región"></Parametro>
+    <Parametro Nombre ="ValidarAplicacion" Valor="Debe Seleccionar una Aplicación"></Parametro>
+
+    <!--##########################################################################################################-->
+
+
+    <Parametro Nombre=".xls"  Valor="~/Img/IconDocumento/excel-icon.gif"/>
+    <Parametro Nombre=".xlsx" Valor="~/Img/IconDocumento/excel-icon.gif"/>
+    <Parametro Nombre=".doc"  Valor="~/Img/IconDocumento/word-icon.gif"/>
+    <Parametro Nombre=".docx" Valor="~/Img/IconDocumento/word-icon.gif"/>
+    <Parametro Nombre=".txt"  Valor="~/Img/IconDocumento/text-icon.gif"/>
+    <Parametro Nombre=".pdf"  Valor="~/Img/IconDocumento/pdf-icon.gif"/>
+    <Parametro Nombre=".rar"  Valor="~/Img/IconDocumento/rar-icon.gif"/>
+    <Parametro Nombre=".zip"  Valor="~/Img/IconDocumento/zip-icon.gif"/>
+    <Parametro Nombre=".jpg"  Valor="~/Img/IconDocumento/image-icon.gif"/>
+    <Parametro Nombre=".png"  Valor="~/Img/IconDocumento/image-icon.gif"/>
+    <Parametro Nombre=".gif"  Valor="~/Img/IconDocumento/image-icon.gif"/>
+    <!--##########################################################################################################-->
+    <Parametro Nombre="Plantilla_Matriz_XLS" Valor="Plantilla_General.xls"/>
+    <Parametro Nombre="Plantilla_Path" Valor="~/Reportes/XLS/"/>
+
+  </Configuracion>
+
+
+</Recursos>
+
+
